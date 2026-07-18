@@ -14,16 +14,25 @@ purpose (1-to-1 and groups capped at 4) is a feature — say it constantly.
 
 ## The offer ladder
 
-| Rung | Offer | Price (launch) | Job |
-|---|---|---|---|
-| 1 | Intro session | £20, credited to first block | Kill the risk of saying yes |
-| 2 | Foundations — 6-week programme | £249 (12 sessions) | Productised on-ramp for complete beginners; cohort = built-in retention |
-| 3 | Small group (max 4) | £25 / person / session | Volume + social proof + friends-bring-friends |
-| 4 | 1-to-1 coaching | £60 / session · 10 for £540 | Flagship margin; priority slots + video feedback justify premium |
+Gbolan's real model (confirmed 18 Jul): everything runs on **4-week blocks at a
+flat £27.50/session** — 1x/week £110 · 2x/week £220 · 3x/week £330, scaling the
+same for 4–5x/week. High-frequency clients sometimes get custom deals (one
+trained ~5x/week around £110/week) plus extras like a free sparring session.
 
-Blocks and programmes are paid up front — cash flow first. Raise prices when a
-week is >80% booked; never discount, add value instead (extra video review, a
-guest session for a friend).
+| Rung | Offer | Price | Job |
+|---|---|---|---|
+| 1 | Intro session | £20, credited to first block *(proposed — confirm)* | Kill the risk of saying yes |
+| 2 | 4-week block | £110 / £220 / £330 for 1–3x per week | The core product; upfront cash flow |
+| 3 | Foundations — 6-week programme | £330 (12 sessions, same flat rate) | Productised on-ramp for complete beginners; cohort = built-in retention |
+| 4 | Custom path (4–5x/week, 2-to-1, groups) | shaped per client | Capture the committed without a public price war |
+
+Blocks and programmes are paid up front — cash flow first.
+
+**Co-founder note on price:** £27.50/session for 1-to-1 boxing coaching is under
+market for Kent (£40–60 is typical). Hold it for now — proof and demand first —
+but the raise trigger stays: when a week is >80% booked, new-client block rates
+go up (existing clients keep their rate for loyalty). Never discount; add value
+instead (video review, a guest session for a friend, a free spar when earned).
 
 ## The funnel (what the Scoreboard measures)
 
