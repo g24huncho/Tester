@@ -21,7 +21,7 @@ Gbolan's confirmed pricing (18 Jul):
 | 1-to-1 single session | £30 | No discounted intro — Gbolan's call; first session is simply £30 |
 | 1-to-1 block · 4 weeks | 1x/wk £110 · 2x/wk £220 · 3x/wk £330 | Flat £27.50/session; blocks are 1-to-1 only; scales to 4–5x with custom deals |
 | Groups, per person/session | 2-to-1 £25 · 3-to-1 £20 · 4-to-1 £15 | |
-| Online coaching (replaces Foundations — parked 18 Jul) | TBC with Gbolan | Programme + weekly video feedback + check-ins; no geography limit |
+| Online coaching | **Coming soon — parked 18 Jul, not bookable** | Shown on site as locked; content teases it ("comment ONLINE") to measure demand before Gbolan builds it |
 
 **Presentation principle (Gbolan's direction):** value-first, price-quiet. Lead
 with what a session includes; prices sit small and simple in a list. No big-number
@@ -58,9 +58,9 @@ as the single CTA everywhere. Log the Scoreboard every Sunday. Collect the first
 and swap them into the site.
 
 **Days 31–60 — Proof + product.**
-Launch online coaching with 2–3 beta clients off the back of the Day-21 reel
-(price it before launch — decide with Gbolan; monthly recurring beats per-session
-here). Film every client win (with consent) — transformation content becomes the
+Count the "ONLINE" comments/DMs from the Day-21 teaser — that number decides
+when online coaching gets built (price it monthly recurring when it does).
+Film every client win (with consent) — transformation content becomes the
 dominant pillar. Second 30-day content block, weighted by the Scoreboard.
 
 **Days 61–90 — Price + leverage.**
@@ -109,7 +109,7 @@ monthly "paths" newsletter with one client story + one open slot count.
 
 ## Open items needing Gbolan
 
-- Price online coaching before launching it (recommend monthly recurring).
-- Photos of Gbolan + logo file → hero and brand polish (info stays dominant).
+- Online coaching: parked as "coming soon" — build + price it when teaser demand shows up.
+- Photos received 18 Jul — corner shot + victory shot now on the site. Logo file still to come.
 - Before/after clips with written consent → Results section + content.
 - Domain name (e.g. dpcoaching.co.uk / diversepaths.co.uk) to deploy publicly.
