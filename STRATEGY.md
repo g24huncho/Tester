@@ -21,7 +21,7 @@ Gbolan's confirmed pricing (18 Jul):
 | 1-to-1 single session | £30 | No discounted intro — Gbolan's call; first session is simply £30 |
 | 1-to-1 block · 4 weeks | 1x/wk £110 · 2x/wk £220 · 3x/wk £330 | Flat £27.50/session; blocks are 1-to-1 only; scales to 4–5x with custom deals |
 | Groups, per person/session | 2-to-1 £25 · 3-to-1 £20 · 4-to-1 £15 | |
-| Foundations — 6-week programme | TBC with Gbolan | He wants it; format/price open (proposal: small-group cohort £199 up front) |
+| Online coaching (replaces Foundations — parked 18 Jul) | TBC with Gbolan | Programme + weekly video feedback + check-ins; no geography limit |
 
 **Presentation principle (Gbolan's direction):** value-first, price-quiet. Lead
 with what a session includes; prices sit small and simple in a list. No big-number
@@ -58,9 +58,10 @@ as the single CTA everywhere. Log the Scoreboard every Sunday. Collect the first
 and swap them into the site.
 
 **Days 31–60 — Proof + product.**
-Launch the first Foundations cohort off the back of week-4 content. Film every
-client win (with consent) — transformation content becomes the dominant pillar.
-Second 30-day content block, weighted by what the Scoreboard says worked.
+Launch online coaching with 2–3 beta clients off the back of the Day-21 reel
+(price it before launch — decide with Gbolan; monthly recurring beats per-session
+here). Film every client win (with consent) — transformation content becomes the
+dominant pillar. Second 30-day content block, weighted by the Scoreboard.
 
 **Days 61–90 — Price + leverage.**
 Raise 1-to-1 pricing if capacity is filling. Introduce referral mechanic: existing
@@ -102,12 +103,13 @@ monthly "paths" newsletter with one client story + one open slot count.
 - Venue: Unique Boxing Gym, 413–415 High Street, Chatham ME4 4NU
 - WhatsApp: +44 7387 006088 · Email: ginakoju@gmail.com
 - Offers per IG bio: 1-1, 2-1, small groups · adults & teens · DM keyword "Start"
-- Pinned post: client testimonials (lift the 3 strongest lines onto the site)
+- Public tag: **DP Coaching** (DP = Diverse Paths); logo incoming from Gbolan
+- Testimonials received 18 Jul (Rosae, Ore, Ebenezer, Arturs — incl. an Amateur
+  England International Belt winner); three now live on the site
 
 ## Open items needing Gbolan
 
-- Confirm launch pricing on the site matches what you actually charge
-  (£20 intro / £60 1-to-1 / £25 group / £249 Foundations are my proposals).
-- Paste the 3 best testimonial lines from the pinned post → onto the site cards.
+- Price online coaching before launching it (recommend monthly recurring).
+- Photos of Gbolan + logo file → hero and brand polish (info stays dominant).
 - Before/after clips with written consent → Results section + content.
-- Domain name (e.g. diversepaths.co.uk) when ready to deploy the site publicly.
+- Domain name (e.g. dpcoaching.co.uk / diversepaths.co.uk) to deploy publicly.
