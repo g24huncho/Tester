@@ -20,8 +20,8 @@
 }
 :root{
   --bg:#F4EFE6; --panel:#FBF8F1; --seam:#DCD2C0; --text:#1D1712; --mut:#6E6254;
-  --accent:#8F7331; --accent-ink:#6E5722; --chip:#EAE2D2;
-  --good:#2E7D4F; --bad:#B0472F; --gold-solid:#C9A254;
+  --accent:#B3271D; --accent-ink:#8C1F16; --chip:#EAE2D2;
+  --good:#2E7D4F; --bad:#B0472F; --red-solid:#E23A2E;
   --display:'Archivo VF',system-ui,sans-serif;
   --serif:'Source Serif VF',Georgia,serif;
   --mono:ui-monospace,'SF Mono',Menlo,monospace;
@@ -29,23 +29,23 @@
 @media (prefers-color-scheme: dark){
   :root{
     --bg:#0B0908; --panel:#161110; --seam:#2B231B; --text:#EDE6DA; --mut:#9A8F80;
-    --accent:#C9A254; --accent-ink:#E7C87C; --chip:#221B14;
+    --accent:#F0554A; --accent-ink:#FF7A6E; --chip:#221B14;
     --good:#6FBF8E; --bad:#DD7A5F;
   }
 }
 :root[data-theme="dark"]{
   --bg:#0B0908; --panel:#161110; --seam:#2B231B; --text:#EDE6DA; --mut:#9A8F80;
-  --accent:#C9A254; --accent-ink:#E7C87C; --chip:#221B14;
+  --accent:#F0554A; --accent-ink:#FF7A6E; --chip:#221B14;
   --good:#6FBF8E; --bad:#DD7A5F;
 }
 :root[data-theme="light"]{
   --bg:#F4EFE6; --panel:#FBF8F1; --seam:#DCD2C0; --text:#1D1712; --mut:#6E6254;
-  --accent:#8F7331; --accent-ink:#6E5722; --chip:#EAE2D2;
+  --accent:#B3271D; --accent-ink:#8C1F16; --chip:#EAE2D2;
   --good:#2E7D4F; --bad:#B0472F;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--bg); color:var(--text); font-family:var(--serif); font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased}
-::selection{background:var(--gold-solid); color:#0B0908}
+::selection{background:var(--red-solid); color:#FFF6F4}
 .wrap{max-width:1080px; margin:0 auto; padding:0 clamp(16px,4vw,40px)}
 button{font:inherit; color:inherit; background:none; border:none; cursor:pointer}
 :where(button,input,a):focus-visible{outline:2px solid var(--accent); outline-offset:2px}
@@ -97,7 +97,7 @@ header .sub{color:var(--mut); max-width:44em; font-size:15.5px}
 .day-num{font-family:var(--display); font-weight:800; font-size:13px; color:var(--mut); min-width:52px; font-variant-numeric:tabular-nums}
 .day.posted .day-num{color:var(--good)}
 .badge{font-family:var(--display); font-weight:700; font-size:9.5px; letter-spacing:.12em; text-transform:uppercase; padding:4px 8px; border-radius:2px; background:var(--chip); color:var(--mut); flex:none}
-.badge.reel{background:var(--gold-solid); color:#0B0908}
+.badge.reel{background:var(--red-solid); color:#FFF6F4}
 .pillar{font-family:var(--display); font-weight:640; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); flex:none}
 .day-title{font-family:var(--display); font-weight:680; font-size:15.5px; flex:1}
 .caret{flex:none; color:var(--mut); transition:transform .3s; font-family:var(--mono)}
@@ -303,9 +303,9 @@ const PLAN = [
  story:"Slider: “Rate your jab honestly 🥊” + tease tomorrow's first-session walkthrough"},
 {d:4,w:1,f:"CAROUSEL",p:"JRN",t:"Your first session, slide by slide",
  hook:"Slide 1: “What actually happens in your first boxing session (it's not what you're scared of).”",
- beats:["Slide 2: We talk first. Goals, injuries, your starting point. Five minutes, no clipboard interrogation.","Slide 3: Warm-up that wakes you up, not wrecks you.","Slide 4: Stance and your first jab — you'll land clean punches on pads within the hour.","Slide 5: A finisher matched to YOUR level. You'll sweat, you won't be destroyed.","Slide 6: We map your path — what we work on and when you'll feel it. CTA: DM 'PATH' to book your intro."],
- cap:"The scariest part of boxing is the door. Here's exactly what's behind it — so the unknown isn't the reason you don't start.\n\nDM me “PATH” and I'll sort your intro session.\n\n#firstsession #beginnerboxing #boxingforbeginners #boxingcoach #newyou",
- cta:"DM “PATH” to book your intro.",
+ beats:["Slide 2: We talk first. Goals, injuries, your starting point. Five minutes, no clipboard interrogation.","Slide 3: Warm-up that wakes you up, not wrecks you.","Slide 4: Stance and your first jab — you'll land clean punches on pads within the hour.","Slide 5: A finisher matched to YOUR level. You'll sweat, you won't be destroyed.","Slide 6: We map your path — what we work on and when you'll feel it. CTA: DM 'Start' to book your intro."],
+ cap:"The scariest part of boxing is the door. Here's exactly what's behind it — so the unknown isn't the reason you don't start.\n\nDM me “Start” and I'll sort your intro session.\n\n#firstsession #beginnerboxing #boxingforbeginners #boxingcoach #newyou",
+ cta:"DM “Start” to book your intro.",
  story:"Share slide 1 + countdown sticker to the weekend's available intro slots"},
 {d:5,w:1,f:"REEL",p:"TEC",t:"Wrap your hands properly",
  hook:"You're wrapping your hands wrong — and your knuckles will tell you eventually.",
@@ -321,9 +321,9 @@ const PLAN = [
  story:"3-part story through your actual day: kit bag → session plan notebook → sunset gym shot"},
 {d:7,w:1,f:"REEL",p:"OFR",t:"Two intro slots this week",
  hook:"Two intro slots. That's genuinely all I've got this week.",
- beats:["Quick montage of the week's best clips. (b-roll + client clips)","An intro session is 60 minutes: you hit pads, we talk goals, we map your path.","£20, credited to your first block if you carry on. No contract, no sales pitch.","DM 'PATH' — first two replies get the slots."],
- cap:"One-to-one coaching means I keep numbers small on purpose. Two intro slots open this week — 60 minutes, £20, credited if you continue. DM “PATH” to claim one.\n\n#boxingcoach #introsession #1to1coaching #beginnerboxing #booknow",
- cta:"DM “PATH” — first come, first served.",
+ beats:["Quick montage of the week's best clips. (b-roll + client clips)","An intro session is 60 minutes: you hit pads, we talk goals, we map your path.","£20, credited to your first block if you carry on. No contract, no sales pitch.","DM 'Start' — first two replies get the slots."],
+ cap:"One-to-one coaching means I keep numbers small on purpose. Two intro slots open this week — 60 minutes, £20, credited if you continue. DM “Start” to claim one.\n\n#boxingcoach #introsession #1to1coaching #beginnerboxing #booknow",
+ cta:"DM “Start” — first come, first served.",
  story:"“2 slots” text story + link/DM sticker. Post a “1 left” update when one goes — real scarcity only."},
 
 {d:8,w:2,f:"REEL",p:"TEC",t:"The jab is a push-off, not a punch",
@@ -346,15 +346,15 @@ const PLAN = [
  story:"This-or-that: “What do you chase — power 💥 or technique 🎯?”"},
 {d:11,w:2,f:"CAROUSEL",p:"MND",t:"5 things boxing teaches that the gym never will",
  hook:"Slide 1: “5 things boxing teaches you that the gym never will.”",
- beats:["Slide 2: How to breathe under pressure — useful in a round, priceless in a meeting.","Slide 3: Focus you can't fake. You cannot scroll mid-combination.","Slide 4: Humility. The pads humble everyone in week one.","Slide 5: Discipline that doesn't rely on motivation.","Slide 6: Calm. Nothing on a Tuesday feels stressful after three rounds. CTA: DM 'PATH'."],
+ beats:["Slide 2: How to breathe under pressure — useful in a round, priceless in a meeting.","Slide 3: Focus you can't fake. You cannot scroll mid-combination.","Slide 4: Humility. The pads humble everyone in week one.","Slide 5: Discipline that doesn't rely on motivation.","Slide 6: Calm. Nothing on a Tuesday feels stressful after three rounds. CTA: DM 'Start'."],
  cap:"The fitness is the entry fee. This list is the actual product. Which one do you need most right now?\n\n#boxingmindset #confidence #discipline #mentalhealth #boxingcoach #diversepaths",
- cta:"DM “PATH” if number 5 hit home.",
+ cta:"DM “Start” if number 5 hit home.",
  story:"Share slide 2 + question sticker: “Which one do you need most?”"},
 {d:12,w:2,f:"REEL",p:"JRN",t:"Client story: the first three rounds",
  hook:"Six weeks ago she couldn't finish one round. Watch this.",
  beats:["[Template — film with a real client + on-camera consent]","Clip 1: early session, honest struggle. Clip 2: this week, three sharp rounds.","Voiceover: what changed wasn't talent. It was showing up twice a week to a plan.","Different paths. One destination — this is what it looks like mid-journey."],
  cap:"Progress isn't a montage, it's Tuesdays and Thursdays that nobody claps for. Six weeks between these two clips. Proud coach.\n\n[Tag client if they're happy to be tagged]\n\n#transformation #boxingjourney #clientwin #beginnerboxing #boxingcoach",
- cta:"Want your own six-week gap like this? DM “PATH”.",
+ cta:"Want your own six-week gap like this? DM “Start”.",
  story:"Repost + “this could be your before clip — the before starts whenever you do”"},
 {d:13,w:2,f:"REEL",p:"TEC",t:"Shadowboxing: 3 rules so you don't look lost",
  hook:"Most people shadowbox like they're swatting flies. Three rules fix it.",
@@ -366,7 +366,7 @@ const PLAN = [
  hook:"Story day — no reel. Sticker: “Ask me anything about starting boxing.”",
  beats:["Morning: AMA question sticker on a training b-roll clip.","Afternoon: answer every question as its own story — each answer is tomorrow's objection handled.","Save the best Q&As to a 'Starting Out' highlight.","Evening: close with “Foundations info drops next week” teaser."],
  cap:"(No feed post today — stories carry Sunday. The AMA answers become a permanent 'Starting Out' highlight, which is your 24/7 objection-handler.)",
- cta:"End the day: “DM 'PATH' if today answered your question.”",
+ cta:"End the day: “DM 'Start' if today answered your question.”",
  story:"AMA sticker → answer thread → save to highlight → Foundations teaser"},
 
 {d:15,w:3,f:"REEL",p:"MND",t:"Comfortable being uncomfortable",
@@ -389,15 +389,15 @@ const PLAN = [
  story:"Before/after freeze-frame of dropped vs proper guard"},
 {d:18,w:3,f:"CAROUSEL",p:"JRN",t:"What progress actually looks like",
  hook:"Slide 1: “Before you judge your progress, read this.”",
- beats:["Slide 2: Week 1 — everything feels wrong. That's the cost of entry, not a verdict.","Slide 3: Week 3 — the stance stops feeling weird. First combination lands clean.","Slide 4: Week 6 — you surprise yourself on the pads. Fitness is visibly different.","Slide 5: Week 12 — people notice. You move like you've trained, because you have.","Slide 6: The only week that ruins it is the one you quit. CTA: DM 'PATH' to start week 1."],
+ beats:["Slide 2: Week 1 — everything feels wrong. That's the cost of entry, not a verdict.","Slide 3: Week 3 — the stance stops feeling weird. First combination lands clean.","Slide 4: Week 6 — you surprise yourself on the pads. Fitness is visibly different.","Slide 5: Week 12 — people notice. You move like you've trained, because you have.","Slide 6: The only week that ruins it is the one you quit. CTA: DM 'Start' to start week 1."],
  cap:"Everyone wants week 12 without the weird weeks. There's no path around them — only through, with a coach who's walked it before you.\n\n#progress #boxingjourney #fitnessjourney #consistency #boxingcoach #diversepaths",
- cta:"DM “PATH” — week 1 starts when you do.",
+ cta:"DM “Start” — week 1 starts when you do.",
  story:"Share slide 5 + countdown to next Foundations cohort"},
 {d:19,w:3,f:"REEL",p:"BTS",t:"What I plan before you ever arrive",
  hook:"You train for an hour. I plan for you before you ever walk in.",
  beats:["Every client has a written plan — blocks, progressions, what we test and when. (show the notebook/board)","Today's session for one client: stance under fatigue, jab-cross rhythm, one new defensive look.","If your coach is improvising every week, you're paying for a workout, not coaching.","This is what premium means: the thinking you don't see."],
  cap:"The session is the tip of the iceberg. The plan is the rest. This is the difference between being trained and being coached.\n\n#coaching #boxingcoach #personaltrainer #premium #sessionplanning",
- cta:"Curious what your plan would look like? DM “PATH”.",
+ cta:"Curious what your plan would look like? DM “Start”.",
  story:"Photo of a real (name-blurred) session plan + “this is an hour before the hour”"},
 {d:20,w:3,f:"REEL",p:"TEC",t:"Footwork you can drill in your kitchen",
  hook:"Boxing footwork, zero equipment, four floor tiles.",
@@ -407,16 +407,16 @@ const PLAN = [
  story:"Film yourself doing it at home — normalise training anywhere"},
 {d:21,w:3,f:"REEL",p:"OFR",t:"Who Foundations is for",
  hook:"You don't need to be fit to start boxing. You need six weeks.",
- beats:["Foundations: my 6-week beginner programme. Twelve sessions, small cohort, written curriculum. (talk-to-camera + b-roll)","Week 1 stance and jab → week 6 full combinations with defence and movement.","For the person who's said 'I'd love to try boxing' for over a year.","Small group, so nobody gets lost. Next cohort is filling — DM 'PATH'."],
- cap:"Six weeks from never-boxed to genuinely boxing — stance, jab, cross, hooks, defence, movement, in a group capped small enough that I see every rep. If you've been circling this for a year, this is the on-ramp.\n\nDM “PATH” for cohort dates.\n\n#foundations #beginnerboxing #6weekchallenge #boxingprogramme #boxingcoach",
- cta:"DM “PATH” for dates and a spot.",
+ beats:["Foundations: my 6-week beginner programme. Twelve sessions, small cohort, written curriculum. (talk-to-camera + b-roll)","Week 1 stance and jab → week 6 full combinations with defence and movement.","For the person who's said 'I'd love to try boxing' for over a year.","Small group, so nobody gets lost. Next cohort is filling — DM 'Start'."],
+ cap:"Six weeks from never-boxed to genuinely boxing — stance, jab, cross, hooks, defence, movement, in a group capped small enough that I see every rep. If you've been circling this for a year, this is the on-ramp.\n\nDM “Start” for cohort dates.\n\n#foundations #beginnerboxing #6weekchallenge #boxingprogramme #boxingcoach",
+ cta:"DM “Start” for dates and a spot.",
  story:"Curriculum week-by-week as 6 quick story frames + DM sticker"},
 
 {d:22,w:4,f:"REEL",p:"MND",t:"The sofa was winning",
  hook:"For a lot of my clients, the honest starting point was: the sofa was winning.",
  beats:["[Voiceover over your best b-roll bank — this is the brand film]","Different paths in: stressed, unfit, bored of the gym, forty and furious about it.","Same destination out: fitter, sharper, hands up, chin down, sure of themselves.","Different paths. One destination. Diverse Paths."],
  cap:"Nobody's origin story is impressive. That's the point — the impressive part is what happens after you message. Wherever you're starting from, that's a path.\n\n#motivation #startingover #boxingjourney #fitnessmotivation #diversepaths",
- cta:"Your path starts with one DM: “PATH”.",
+ cta:"Your path starts with one DM: “Start”.",
  story:"Text-only story of the hook line, black background — let it breathe"},
 {d:23,w:4,f:"REEL",p:"TEC",t:"Hooks: short, turned, nasty",
  hook:"The hook is the punch everyone throws worst. Three fixes.",
@@ -428,19 +428,19 @@ const PLAN = [
  hook:"POV: your tenth session vs your first.",
  beats:["Split-screen concept: same drill, two eras. (use a real client's consented clips, or act both yourself)","Session 1: thinking about every limb, gassed in ninety seconds.","Session 10: combinations flowing, breathing controlled, actually smiling mid-round.","Ten sessions. That's the gap between those two people."],
  cap:"The distance between clip one and clip two is not talent. It's ten appointments you didn't cancel.\n\n#povchallenge #progress #boxingtransformation #beforeandafter #boxingcoach",
- cta:"Book session 1 — DM “PATH”.",
+ cta:"Book session 1 — DM “Start”.",
  story:"Ask past clients to DM you their session-1 memory; screenshot (with consent) as proof stories"},
 {d:25,w:4,f:"CAROUSEL",p:"OFR",t:"Which path is yours?",
  hook:"Slide 1: “1-to-1, small group, or Foundations — which path is yours?”",
- beats:["Slide 2: 1-to-1 — fastest progress, fully personal, priority slots. For 'I want this properly'.","Slide 3: Small group (max 4) — the energy of a crew, coaching that still sees you. For training with mates.","Slide 4: Foundations 6-week — the structured on-ramp. For 'complete beginner, want a plan'.","Slide 5: Not sure? That's literally what the intro session is for — £20, credited if you continue.","Slide 6: DM 'PATH' and I'll tell you straight which one fits."],
- cap:"Three doors, one destination. And if you pick the wrong one, I'll move you — the plan serves you, not the other way round.\n\nDM “PATH” and tell me your goal in one sentence; I'll answer with the right door.\n\n#boxingcoaching #1to1 #smallgroup #foundations #boxingcoach #diversepaths",
- cta:"DM “PATH” + your goal in one sentence.",
+ beats:["Slide 2: 1-to-1 — fastest progress, fully personal, priority slots. For 'I want this properly'.","Slide 3: Small group (max 4) — the energy of a crew, coaching that still sees you. For training with mates.","Slide 4: Foundations 6-week — the structured on-ramp. For 'complete beginner, want a plan'.","Slide 5: Not sure? That's literally what the intro session is for — £20, credited if you continue.","Slide 6: DM 'Start' and I'll tell you straight which one fits."],
+ cap:"Three doors, one destination. And if you pick the wrong one, I'll move you — the plan serves you, not the other way round.\n\nDM “Start” and tell me your goal in one sentence; I'll answer with the right door.\n\n#boxingcoaching #1to1 #smallgroup #foundations #boxingcoach #diversepaths",
+ cta:"DM “Start” + your goal in one sentence.",
  story:"3-frame breakdown, one per option, each with a DM sticker"},
 {d:26,w:4,f:"REEL",p:"MIS",t:"Stop working out. Start training.",
  hook:"There's a difference between working out and training. Most people have never trained.",
  beats:["Working out is burning calories. Training is building a skill that happens to burn calories. (talk-to-camera)","Workouts get repetitive. Skills compound — every session stacks on the last.","That's why boxing sticks when gym memberships don't: you're building something.","Come build something."],
  cap:"Motivation runs out. Craft doesn't. The people who've 'tried everything' usually just haven't trained toward anything.\n\n#training #boxingmindset #fitnessmotivation #skillsfirst #boxingcoach",
- cta:"Ready to train, not just work out? DM “PATH”.",
+ cta:"Ready to train, not just work out? DM “Start”.",
  story:"Poll: “Be honest — do you work out or train?”"},
 {d:27,w:4,f:"REEL",p:"BTS",t:"Kit worth buying (and kit that's a waste)",
  hook:"Don't spend a penny on boxing kit before watching this.",
@@ -450,9 +450,9 @@ const PLAN = [
  story:"Your own glove collection + “ask me a gear question” sticker"},
 {d:28,w:4,f:"REEL",p:"OFR",t:"This is what the destination looks like",
  hook:"This is what 12 weeks at Diverse Paths looks like.",
- beats:["[Your strongest transformation — consented before/after clips or stills]","Voiceover: where they started, what the path was, where they are now.","Not a bootcamp shock. Twelve weeks of technique, conditioning, and turning up.","Spots for next month open now. DM 'PATH'."],
- cap:"Real client, real twelve weeks, real path. If you want your own version of this clip, month one starts with one message.\n\nDM “PATH” — next month's spots are open now.\n\n#transformation #12weeks #results #boxingtransformation #boxingcoach #diversepaths",
- cta:"DM “PATH” to claim a spot for next month.",
+ beats:["[Your strongest transformation — consented before/after clips or stills]","Voiceover: where they started, what the path was, where they are now.","Not a bootcamp shock. Twelve weeks of technique, conditioning, and turning up.","Spots for next month open now. DM 'Start'."],
+ cap:"Real client, real twelve weeks, real path. If you want your own version of this clip, month one starts with one message.\n\nDM “Start” — next month's spots are open now.\n\n#transformation #12weeks #results #boxingtransformation #boxingcoach #diversepaths",
+ cta:"DM “Start” to claim a spot for next month.",
  story:"Repost + “spots open” countdown sticker for 48 hours"},
 
 {d:29,w:5,f:"REEL",p:"TEC",t:"Defence 101: the simplest slip",
@@ -463,9 +463,9 @@ const PLAN = [
  story:"Slow-mo slip + “an inch beats a leap” text overlay"},
 {d:30,w:5,f:"REEL",p:"MND",t:"Different paths. One destination.",
  hook:"Thirty days of this page in one minute.",
- beats:["[Month-one anthem: best clip from each week, cut fast to one voiceover]","Voiceover: some came to get fit, some to learn to fight, some to feel like themselves again.","Every one of them on a different path. Every one headed to the same place.","If you watched all month and did nothing: this is the sign. DM 'PATH'. Month two starts now."],
- cap:"One month of Diverse Paths in sixty seconds. If you've been watching from the sofa — the sofa's had you long enough. DM “PATH” and start your path this week.\n\n#monthone #diversepaths #boxingjourney #newmonth #boxingcoach #beginnerboxing",
- cta:"DM “PATH”. Month two starts with you in it.",
+ beats:["[Month-one anthem: best clip from each week, cut fast to one voiceover]","Voiceover: some came to get fit, some to learn to fight, some to feel like themselves again.","Every one of them on a different path. Every one headed to the same place.","If you watched all month and did nothing: this is the sign. DM 'Start'. Month two starts now."],
+ cap:"One month of Diverse Paths in sixty seconds. If you've been watching from the sofa — the sofa's had you long enough. DM “Start” and start your path this week.\n\n#monthone #diversepaths #boxingjourney #newmonth #boxingcoach #beginnerboxing",
+ cta:"DM “Start”. Month two starts with you in it.",
  story:"Recap + poll: “What content helped most? Technique / Mindset / Client stories / BTS” — this vote steers the next 30 days"}
 ];
 

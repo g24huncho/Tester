@@ -15,8 +15,9 @@ This repo is the operating system for the business.
 ## Using the site
 
 1. Open `site/index.html` — it works from a double-click, no server needed.
-2. Before going public, replace the placeholders (all marked in the file):
-   WhatsApp number, email, training location, and the example testimonial cards.
+2. Contact details, location and DM keyword ("Start") are wired in. Before going
+   public, swap the example testimonial cards for real client words from the
+   pinned Instagram post.
 3. To deploy: point any static host (Netlify, Cloudflare Pages, GitHub Pages) at
    the `site/` folder and connect a domain.
 

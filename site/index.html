@@ -3,19 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Diverse Paths — 1-to-1 &amp; Small-Group Boxing Coaching</title>
-<meta name="description" content="Premium 1-to-1 and small-group boxing coaching with Gbolan Inakoju. Real technique, real fitness, real confidence — whatever path you're on. Book your intro session.">
+<title>Diverse Paths — Boxing Coaching in Chatham | 1-to-1 &amp; Small Group</title>
+<meta name="description" content="1-to-1, 2-to-1 and small-group boxing coaching with Gbolan Inakoju at Unique Boxing Gym, Chatham. Real technique, real fitness, real confidence — adults and teens. Book your intro session.">
 <meta property="og:title" content="Diverse Paths — Boxing Coaching">
 <meta property="og:description" content="Different paths. One destination. 1-to-1 and small-group boxing coaching for ordinary people who want an extraordinary standard.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#0B0908">
+<meta name="theme-color" content="#0B0A0A">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SportsActivityLocation",
   "name": "Diverse Paths Boxing Coaching",
-  "description": "1-to-1 and small-group boxing coaching. Technique-first sessions building fitness, skill and confidence.",
+  "description": "1-to-1, 2-to-1 and small-group boxing coaching for adults and teens at Unique Boxing Gym, Chatham.",
   "founder": { "@type": "Person", "name": "Gbolan Inakoju" },
+  "address": { "@type": "PostalAddress", "streetAddress": "413-415 High Street", "addressLocality": "Chatham", "postalCode": "ME4 4NU", "addressCountry": "GB" },
+  "telephone": "+447387006088",
+  "email": "ginakoju@gmail.com",
   "sameAs": ["https://www.instagram.com/diversepaths_"],
   "priceRange": "££"
 }
@@ -35,13 +38,14 @@
   font-weight:200 900; font-display:swap;
 }
 :root{
-  --ink:#0B0908;        /* page ground — warm near-black */
-  --coal:#161110;       /* raised surface */
-  --seam:#2B231B;       /* hairlines */
-  --bone:#EDE6DA;       /* primary text */
-  --smoke:#9A8F80;      /* muted text */
-  --gold:#C9A254;       /* championship gold */
-  --gold-2:#E7C87C;     /* gold hover */
+  --ink:#0B0A0A;        /* page ground — near-black */
+  --paper:#F2EDE4;      /* light band ground */
+  --surface:#151313;    /* raised surface (re-scoped in .lt) */
+  --line:#2A2524;       /* hairlines (re-scoped in .lt) */
+  --text:#F3EEE7;       /* primary text (re-scoped in .lt) */
+  --muted:#9C938B;      /* muted text (re-scoped in .lt) */
+  --acc:#E23A2E;        /* DP red */
+  --acc-2:#FF6155;      /* red hover (re-scoped in .lt) */
   --display:'Archivo VF',system-ui,sans-serif;
   --serif:'Source Serif VF',Georgia,serif;
   --wide:'wdth' 125;
@@ -50,11 +54,11 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  background:var(--ink); color:var(--bone);
+  background:var(--ink); color:var(--text);
   font-family:var(--serif); font-size:17px; line-height:1.75;
   -webkit-font-smoothing:antialiased; overflow-x:hidden;
 }
-::selection{background:var(--gold); color:var(--ink)}
+::selection{background:var(--acc); color:var(--ink)}
 img,svg{max-width:100%}
 a{color:inherit}
 
@@ -66,15 +70,21 @@ a{color:inherit}
 }
 .label{
   font-family:var(--display); font-weight:640; font-size:11px;
-  text-transform:uppercase; letter-spacing:.18em; color:var(--gold);
+  text-transform:uppercase; letter-spacing:.18em; color:var(--acc);
 }
-.lede{font-size:clamp(17px,2.2vw,20px); color:var(--smoke); max-width:34em}
+.lede{font-size:clamp(17px,2.2vw,20px); color:var(--muted); max-width:34em}
 h2.display{font-size:clamp(34px,6vw,64px); margin:14px 0 20px}
 
 /* ---- layout ---- */
 .wrap{max-width:1160px; margin:0 auto; padding-inline:var(--pad)}
-section{padding-block:clamp(72px,12vw,140px); border-top:1px solid var(--seam)}
+section{padding-block:clamp(72px,12vw,140px); border-top:1px solid var(--line)}
 section:first-of-type{border-top:0}
+section.lt{
+  background:var(--paper);
+  --surface:#FCFAF4; --line:#E0D6C7; --text:#181310; --muted:#6D6156;
+  --acc:#C22B20; --acc-2:#981F17;
+  color:var(--text);
+}
 
 /* ---- reveal motion ---- */
 .reveal{opacity:0; transform:translateY(26px); transition:opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1)}
@@ -93,13 +103,13 @@ nav{
   backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
   border-bottom:1px solid transparent; transition:border-color .3s;
 }
-nav.scrolled{border-bottom-color:var(--seam)}
+nav.scrolled{border-bottom-color:var(--line)}
 .nav-in{max-width:1160px; margin:0 auto; padding:16px var(--pad); display:flex; align-items:center; gap:28px}
 .wordmark{font-family:var(--display); font-variation-settings:var(--wide); font-weight:840; font-size:15px; letter-spacing:.02em; text-transform:uppercase; text-decoration:none; white-space:nowrap}
-.wordmark em{font-style:normal; color:var(--gold)}
+.wordmark em{font-style:normal; color:var(--acc)}
 .nav-links{display:none; gap:26px; margin-left:auto; list-style:none}
-.nav-links a{font-family:var(--display); font-weight:560; font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; color:var(--smoke); transition:color .2s}
-.nav-links a:hover,.nav-links a:focus-visible{color:var(--bone)}
+.nav-links a{font-family:var(--display); font-weight:560; font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; color:var(--muted); transition:color .2s}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--text)}
 .nav-cta{margin-left:auto}
 @media(min-width:880px){ .nav-links{display:flex} .nav-cta{margin-left:0} }
 
@@ -108,26 +118,26 @@ nav.scrolled{border-bottom-color:var(--seam)}
   display:inline-flex; align-items:center; gap:10px;
   font-family:var(--display); font-weight:680; font-size:13px;
   letter-spacing:.1em; text-transform:uppercase; text-decoration:none;
-  padding:15px 26px; border:1px solid var(--gold); border-radius:2px;
+  padding:15px 26px; border:1px solid var(--acc); border-radius:2px;
   transition:transform .2s, background .2s, color .2s, border-color .2s;
 }
 .btn:active{transform:translateY(1px)}
-.btn-solid{background:var(--gold); color:var(--ink)}
-.btn-solid:hover,.btn-solid:focus-visible{background:var(--gold-2); border-color:var(--gold-2)}
-.btn-ghost{color:var(--bone); border-color:var(--seam)}
-.btn-ghost:hover,.btn-ghost:focus-visible{border-color:var(--gold); color:var(--gold-2)}
+.btn-solid{background:var(--acc); color:#FFF6F4}
+.btn-solid:hover,.btn-solid:focus-visible{background:var(--acc-2); border-color:var(--acc-2); color:#FFF6F4}
+.btn-ghost{color:var(--text); border-color:var(--line)}
+.btn-ghost:hover,.btn-ghost:focus-visible{border-color:var(--acc); color:var(--acc-2)}
 .btn-sm{padding:10px 18px; font-size:11.5px}
-:where(a,button):focus-visible{outline:2px solid var(--gold-2); outline-offset:3px}
+:where(a,button):focus-visible{outline:2px solid var(--acc-2); outline-offset:3px}
 
 /* ---- hero ---- */
 .hero{min-height:100svh; display:flex; align-items:center; position:relative; padding-top:80px; border-top:0}
 .hero-paths{position:absolute; inset:0; width:100%; height:100%; pointer-events:none}
-.hero-paths path{stroke:var(--gold); fill:none; opacity:.34}
-.hero-paths .dest{fill:var(--gold); opacity:0; transition:opacity 1.2s 1.6s}
+.hero-paths path{stroke:var(--acc); fill:none; opacity:.34}
+.hero-paths .dest{fill:var(--acc); opacity:0; transition:opacity 1.2s 1.6s}
 .hero-paths.drawn .dest{opacity:.9}
 .hero-in{position:relative; z-index:2}
 .hero h1{font-size:clamp(46px,9.4vw,118px); margin:20px 0 26px}
-.hero h1 .line2{color:transparent; -webkit-text-stroke:1.5px var(--gold); display:block}
+.hero h1 .line2{color:var(--acc); display:block}
 .hero .lede{margin-bottom:38px}
 .hero-ctas{display:flex; flex-wrap:wrap; gap:14px}
 .hero-rise{opacity:0; transform:translateY(30px); animation:rise .9s cubic-bezier(.22,1,.36,1) forwards}
@@ -140,10 +150,10 @@ nav.scrolled{border-bottom-color:var(--seam)}
 @media (prefers-reduced-motion:reduce){ .hero-rise{animation:none; opacity:1; transform:none} }
 
 /* ---- marquee ---- */
-.marquee{border-block:1px solid var(--seam); overflow:hidden; padding:18px 0; background:var(--coal)}
+.marquee{border-block:1px solid var(--line); overflow:hidden; padding:18px 0; background:var(--surface)}
 .mq-track{display:flex; gap:48px; width:max-content; animation:mq 30s linear infinite}
-.mq-track span{font-family:var(--display); font-variation-settings:var(--wide); font-weight:800; font-size:15px; letter-spacing:.14em; text-transform:uppercase; color:var(--smoke); white-space:nowrap}
-.mq-track span i{font-style:normal; color:var(--gold); margin-left:48px}
+.mq-track span{font-family:var(--display); font-variation-settings:var(--wide); font-weight:800; font-size:15px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); white-space:nowrap}
+.mq-track span i{font-style:normal; color:var(--acc); margin-left:48px}
 @keyframes mq{to{transform:translateX(-50%)}}
 
 /* ---- manifesto ---- */
@@ -151,102 +161,102 @@ nav.scrolled{border-bottom-color:var(--seam)}
   font-family:var(--serif); font-weight:340; font-size:clamp(23px,3.6vw,36px);
   line-height:1.45; max-width:26em; text-wrap:balance;
 }
-.manifesto blockquote strong{font-weight:620; color:var(--gold-2)}
+.manifesto blockquote strong{font-weight:620; color:var(--acc-2)}
 .sig{margin-top:30px; display:flex; align-items:center; gap:16px}
-.sig-line{width:44px; height:1px; background:var(--gold)}
-.sig p{font-family:var(--display); font-weight:600; font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--smoke)}
-.sig p b{color:var(--bone); font-weight:700}
+.sig-line{width:44px; height:1px; background:var(--acc)}
+.sig p{font-family:var(--display); font-weight:600; font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+.sig p b{color:var(--text); font-weight:700}
 
 /* ---- cards grid ---- */
 .grid3{display:grid; gap:18px; margin-top:44px}
 @media(min-width:820px){.grid3{grid-template-columns:repeat(3,1fr)}}
 .card{
-  background:var(--coal); border:1px solid var(--seam); border-radius:4px;
+  background:var(--surface); border:1px solid var(--line); border-radius:4px;
   padding:34px 28px; display:flex; flex-direction:column; gap:14px;
   transition:transform .3s cubic-bezier(.22,1,.36,1), border-color .3s;
 }
-.card:hover{transform:translateY(-5px); border-color:color-mix(in srgb, var(--gold) 55%, var(--seam))}
+.card:hover{transform:translateY(-5px); border-color:color-mix(in srgb, var(--acc) 55%, var(--line))}
 .card h3{font-family:var(--display); font-variation-settings:var(--wide); font-weight:780; font-size:21px; text-transform:uppercase; letter-spacing:-.01em; line-height:1.1}
-.card p{color:var(--smoke); font-size:16px}
+.card p{color:var(--muted); font-size:16px}
 .card .label{letter-spacing:.2em}
 
 /* ---- coaching offers ---- */
 .offer{position:relative}
 .offer ul{list-style:none; margin-top:6px; display:flex; flex-direction:column; gap:9px}
-.offer ul li{color:var(--smoke); font-size:15.5px; padding-left:20px; position:relative}
-.offer ul li::before{content:""; position:absolute; left:0; top:.62em; width:9px; height:1.5px; background:var(--gold)}
+.offer ul li{color:var(--muted); font-size:15.5px; padding-left:20px; position:relative}
+.offer ul li::before{content:""; position:absolute; left:0; top:.62em; width:9px; height:1.5px; background:var(--acc)}
 .offer .tag{
-  position:absolute; top:-11px; right:20px; background:var(--gold); color:var(--ink);
+  position:absolute; top:-11px; right:20px; background:var(--acc); color:var(--ink);
   font-family:var(--display); font-weight:760; font-size:10px; letter-spacing:.14em;
   text-transform:uppercase; padding:5px 10px; border-radius:2px;
 }
-.offer.flagship{border-color:var(--gold)}
+.offer.flagship{border-color:var(--acc)}
 
 /* ---- path timeline ---- */
 .path-list{margin-top:52px; position:relative; display:flex; flex-direction:column; gap:0}
-.path-rail{position:absolute; left:11px; top:8px; bottom:8px; width:2px; background:var(--seam); overflow:hidden}
-.path-rail i{position:absolute; inset:0; background:var(--gold); transform:scaleY(0); transform-origin:top; transition:transform 1.4s cubic-bezier(.22,1,.36,1)}
+.path-rail{position:absolute; left:11px; top:8px; bottom:8px; width:2px; background:var(--line); overflow:hidden}
+.path-rail i{position:absolute; inset:0; background:var(--acc); transform:scaleY(0); transform-origin:top; transition:transform 1.4s cubic-bezier(.22,1,.36,1)}
 .path-list.on .path-rail i{transform:scaleY(1)}
 .step{position:relative; padding:0 0 46px 56px}
 .step:last-child{padding-bottom:0}
 .step::before{
   content:""; position:absolute; left:4px; top:6px; width:16px; height:16px;
-  border-radius:50%; background:var(--ink); border:2px solid var(--gold);
+  border-radius:50%; background:var(--surface); border:2px solid var(--acc);
 }
-.step .n{font-family:var(--display); font-weight:800; font-size:13px; letter-spacing:.16em; color:var(--gold)}
+.step .n{font-family:var(--display); font-weight:800; font-size:13px; letter-spacing:.16em; color:var(--acc)}
 .step h3{font-family:var(--display); font-variation-settings:var(--wide); font-weight:780; font-size:clamp(20px,3vw,26px); text-transform:uppercase; margin:6px 0 8px}
-.step p{color:var(--smoke); max-width:36em}
+.step p{color:var(--muted); max-width:36em}
 
 /* ---- results ---- */
 .quote-card{gap:18px}
 .quote-card .ex{
   align-self:flex-start; font-family:var(--display); font-weight:640; font-size:10px;
-  letter-spacing:.14em; text-transform:uppercase; color:var(--ink);
-  background:var(--smoke); padding:4px 9px; border-radius:2px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--text);
+  background:var(--line); padding:4px 9px; border-radius:2px;
 }
 .quote-card q{font-size:17.5px; line-height:1.6; quotes:"“" "”"}
-.quote-card .who{font-family:var(--display); font-weight:620; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--gold)}
-.swap-note{margin-top:22px; color:var(--smoke); font-size:14.5px; border-left:2px solid var(--gold); padding-left:16px; max-width:44em}
+.quote-card .who{font-family:var(--display); font-weight:620; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--acc)}
+.swap-note{margin-top:22px; color:var(--muted); font-size:14.5px; border-left:2px solid var(--acc); padding-left:16px; max-width:44em}
 
 /* ---- pricing ---- */
 .price-cards{display:grid; gap:18px; margin-top:44px}
 @media(min-width:900px){.price-cards{grid-template-columns:repeat(4,1fr)}}
 @media(min-width:640px) and (max-width:899px){.price-cards{grid-template-columns:repeat(2,1fr)}}
 .price{font-family:var(--display); font-weight:840; font-variation-settings:var(--wide); font-size:44px; font-variant-numeric:tabular-nums; line-height:1}
-.price small{font-family:var(--display); font-variation-settings:'wdth' 100; font-weight:560; font-size:12px; letter-spacing:.08em; color:var(--smoke); text-transform:uppercase; display:block; margin-top:8px}
-.price-note{margin-top:26px; color:var(--smoke); font-size:14.5px}
+.price small{font-family:var(--display); font-variation-settings:'wdth' 100; font-weight:560; font-size:12px; letter-spacing:.08em; color:var(--muted); text-transform:uppercase; display:block; margin-top:8px}
+.price-note{margin-top:26px; color:var(--muted); font-size:14.5px}
 
 /* ---- faq ---- */
 .faq{max-width:780px}
-.faq-item{border-bottom:1px solid var(--seam)}
+.faq-item{border-bottom:1px solid var(--line)}
 .faq-item button{
   all:unset; display:flex; justify-content:space-between; align-items:center; gap:20px;
   width:100%; padding:24px 0; cursor:pointer;
   font-family:var(--display); font-weight:700; font-size:16.5px; letter-spacing:.01em;
 }
-.faq-item button:hover .fq{color:var(--gold-2)}
+.faq-item button:hover .fq{color:var(--acc-2)}
 .faq-item .x{flex:none; width:14px; height:14px; position:relative}
-.faq-item .x::before,.faq-item .x::after{content:""; position:absolute; background:var(--gold); inset:50% auto auto 0; width:14px; height:2px; margin-top:-1px; transition:transform .3s}
+.faq-item .x::before,.faq-item .x::after{content:""; position:absolute; background:var(--acc); inset:50% auto auto 0; width:14px; height:2px; margin-top:-1px; transition:transform .3s}
 .faq-item .x::after{transform:rotate(90deg)}
 .faq-item.open .x::after{transform:rotate(0)}
 .faq-body{max-height:0; overflow:hidden; transition:max-height .4s cubic-bezier(.22,1,.36,1)}
-.faq-body p{color:var(--smoke); padding:0 0 24px; max-width:40em}
+.faq-body p{color:var(--muted); padding:0 0 24px; max-width:40em}
 
 /* ---- contact ---- */
 .contact-btns{display:flex; flex-wrap:wrap; gap:14px; margin-top:36px}
-.fineprint{margin-top:30px; color:var(--smoke); font-size:14px}
-.fineprint code{font-family:ui-monospace,monospace; font-size:13px; color:var(--gold-2)}
+.fineprint{margin-top:30px; color:var(--muted); font-size:14px}
+.fineprint code{font-family:ui-monospace,monospace; font-size:13px; color:var(--acc-2)}
 
 /* ---- footer ---- */
-footer{border-top:1px solid var(--seam); padding:56px 0 40px; overflow:hidden}
+footer{border-top:1px solid var(--line); padding:56px 0 40px; overflow:hidden}
 .foot-mark{
   font-family:var(--display); font-variation-settings:var(--wide); font-weight:860;
   font-size:clamp(52px,12vw,150px); text-transform:uppercase; line-height:.9;
-  color:transparent; -webkit-text-stroke:1px var(--seam); user-select:none; white-space:nowrap;
+  color:transparent; -webkit-text-stroke:1px var(--line); user-select:none; white-space:nowrap;
 }
 .foot-row{display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; margin-top:34px; align-items:center}
-.foot-row p, .foot-row a{font-family:var(--display); font-weight:580; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--smoke); text-decoration:none}
-.foot-row a:hover{color:var(--gold-2)}
+.foot-row p, .foot-row a{font-family:var(--display); font-weight:580; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); text-decoration:none}
+.foot-row a:hover{color:var(--acc-2)}
 </style>
 
 <nav id="nav" aria-label="Main">
@@ -273,9 +283,9 @@ footer{border-top:1px solid var(--seam); padding:56px 0 40px; overflow:hidden}
     <circle class="dest" cx="1212" cy="402" r="5"/>
   </svg>
   <div class="wrap hero-in">
-    <p class="label hero-rise">1-to-1 &amp; Small-Group Boxing Coaching</p>
+    <p class="label hero-rise">1-to-1 · 2-to-1 · Small-Group Boxing · Chatham</p>
     <h1 class="display hero-rise">Different paths. <span class="line2">One destination.</span></h1>
-    <p class="lede hero-rise">Boxing coaching for ordinary people who want an extraordinary standard — real technique, real fitness, and the kind of confidence that follows you out of the gym.</p>
+    <p class="lede hero-rise">Boxing coaching for ordinary people who want an extraordinary standard — real technique, real fitness, and the kind of confidence that follows you out of the gym. Adults and teens, at Unique Boxing Gym in Chatham.</p>
     <div class="hero-ctas hero-rise">
       <a class="btn btn-solid" href="#book">Book your intro session</a>
       <a class="btn btn-ghost" href="#coaching">See coaching options</a>
@@ -303,7 +313,7 @@ footer{border-top:1px solid var(--seam); padding:56px 0 40px; overflow:hidden}
   </div>
 </section>
 
-<section id="method">
+<section id="method" class="lt">
   <div class="wrap">
     <div class="reveal">
       <p class="label">The Method</p>
@@ -330,7 +340,7 @@ footer{border-top:1px solid var(--seam); padding:56px 0 40px; overflow:hidden}
   </div>
 </section>
 
-<section id="coaching">
+<section id="coaching" class="lt">
   <div class="wrap">
     <div class="reveal">
       <p class="label">Coaching</p>
@@ -355,9 +365,9 @@ footer{border-top:1px solid var(--seam); padding:56px 0 40px; overflow:hidden}
         <p>Maximum four people. The energy of training together, with coaching that still sees every one of you.</p>
         <ul>
           <li>Capped at 4 — never a crowd</li>
+          <li>2-to-1 partner sessions with a friend</li>
           <li>Partner drills and pad rotations</li>
-          <li>Perfect with friends, partners, colleagues</li>
-          <li>All levels, scaled per person</li>
+          <li>Adults &amp; teens — scaled per person</li>
         </ul>
       </article>
       <article class="card offer reveal">
@@ -376,7 +386,7 @@ footer{border-top:1px solid var(--seam); padding:56px 0 40px; overflow:hidden}
   </div>
 </section>
 
-<section id="path">
+<section id="path" class="lt">
   <div class="wrap">
     <div class="reveal">
       <p class="label">Your Path</p>
@@ -408,7 +418,7 @@ footer{border-top:1px solid var(--seam); padding:56px 0 40px; overflow:hidden}
   </div>
 </section>
 
-<section id="results">
+<section id="results" class="lt">
   <div class="wrap">
     <div class="reveal">
       <p class="label">Results</p>
@@ -431,11 +441,14 @@ footer{border-top:1px solid var(--seam); padding:56px 0 40px; overflow:hidden}
         <p class="who">Client name — Foundations</p>
       </article>
     </div>
-    <p class="swap-note reveal">These three cards are templates — swap in real client words as soon as you have them (ask after every visible win). One honest sentence from a real person outsells any copy I could write. This section is also where client before/after transformation clips will live.</p>
+    <p class="swap-note reveal">Real client words are already pinned on the Instagram page — the three strongest lines belong on these cards. This section is also where before/after transformation clips will live.</p>
+    <div class="contact-btns reveal" style="margin-top:26px">
+      <a class="btn btn-ghost" href="https://www.instagram.com/diversepaths_" rel="noopener">Real testimonials — pinned on @diversepaths_</a>
+    </div>
   </div>
 </section>
 
-<section id="pricing">
+<section id="pricing" class="lt">
   <div class="wrap">
     <div class="reveal">
       <p class="label">Pricing</p>
@@ -467,7 +480,7 @@ footer{border-top:1px solid var(--seam); padding:56px 0 40px; overflow:hidden}
   </div>
 </section>
 
-<section id="faq">
+<section id="faq" class="lt">
   <div class="wrap">
     <div class="reveal">
       <p class="label">FAQ</p>
@@ -492,11 +505,15 @@ footer{border-top:1px solid var(--seam); padding:56px 0 40px; overflow:hidden}
       </div>
       <div class="faq-item">
         <button aria-expanded="false"><span class="fq">Where and when do sessions run?</span><span class="x" aria-hidden="true"></span></button>
-        <div class="faq-body"><p>Sessions run at [your training location] with early-morning, evening and weekend slots. Message me and we'll find times that fit around your life — not the other way round.</p></div>
+        <div class="faq-body"><p>Sessions run at Unique Boxing Gym, 413–415 High Street, Chatham ME4 4NU — with early-morning, evening and weekend slots. Message me and we'll find times that fit around your life, not the other way round.</p></div>
+      </div>
+      <div class="faq-item">
+        <button aria-expanded="false"><span class="fq">Do you coach teenagers?</span><span class="x" aria-hidden="true"></span></button>
+        <div class="faq-body"><p>Yes — adults and teens both train here. Teen sessions are structured, confidence-first and safety-led, and parents are always welcome to stay and watch.</p></div>
       </div>
       <div class="faq-item">
         <button aria-expanded="false"><span class="fq">How do I book?</span><span class="x" aria-hidden="true"></span></button>
-        <div class="faq-body"><p>Tap "Book your intro session" anywhere on this page, or DM <a href="https://www.instagram.com/diversepaths_" rel="noopener">@diversepaths_</a> on Instagram. You'll get a reply the same day.</p></div>
+        <div class="faq-body"><p>Tap "Book your intro session" anywhere on this page, WhatsApp me, or DM <strong>“Start”</strong> to <a href="https://www.instagram.com/diversepaths_" rel="noopener">@diversepaths_</a> on Instagram. You'll get a reply the same day.</p></div>
       </div>
     </div>
   </div>
@@ -508,11 +525,11 @@ footer{border-top:1px solid var(--seam); padding:56px 0 40px; overflow:hidden}
     <h2 class="display">The hardest round<br>is booking the first one.</h2>
     <p class="lede">One intro session. Sixty minutes. You'll leave sweating, smiling, and knowing exactly what your path looks like.</p>
     <div class="contact-btns">
-      <a class="btn btn-solid" href="https://wa.me/447000000000?text=Hi%20Gbolan%20—%20I'd%20like%20to%20book%20an%20intro%20boxing%20session" rel="noopener">WhatsApp — book intro</a>
+      <a class="btn btn-solid" href="https://wa.me/447387006088?text=Hi%20Gbolan%2C%20I%27d%20like%20to%20book%20an%20intro%20boxing%20session" rel="noopener">WhatsApp — book intro</a>
       <a class="btn btn-ghost" href="https://ig.me/m/diversepaths_" rel="noopener">DM on Instagram</a>
-      <a class="btn btn-ghost" href="mailto:hello@diversepaths.co.uk?subject=Intro%20session">Email</a>
+      <a class="btn btn-ghost" href="mailto:ginakoju@gmail.com?subject=Intro%20session">Email</a>
     </div>
-    <p class="fineprint">Setup note for Gbolan: replace <code>447000000000</code> with your WhatsApp number and <code>hello@diversepaths.co.uk</code> with your real email — they're each in one place in this file.</p>
+    <p class="fineprint">Sessions at Unique Boxing Gym · 413–415 High St, Chatham ME4 4NU. Prefer Instagram? DM <strong>“Start”</strong> to @diversepaths_.</p>
   </div>
 </section>
 
@@ -520,7 +537,7 @@ footer{border-top:1px solid var(--seam); padding:56px 0 40px; overflow:hidden}
   <div class="wrap">
     <p class="foot-mark" aria-hidden="true">Diverse Paths</p>
     <div class="foot-row">
-      <p>© 2026 Diverse Paths · Boxing Coaching</p>
+      <p>© 2026 Diverse Paths · Unique Boxing Gym, Chatham</p>
       <a href="https://www.instagram.com/diversepaths_" rel="noopener">Instagram — @diversepaths_</a>
     </div>
   </div>

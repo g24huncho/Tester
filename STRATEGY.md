@@ -27,7 +27,7 @@ guest session for a friend).
 
 ## The funnel (what the Scoreboard measures)
 
-Instagram reach → profile visits → DMs (keyword **"PATH"**) → intro booked → client.
+Instagram reach → profile visits → DMs (keyword **"Start"** — already live in the bio) → intro booked → client.
 
 Weakest link rule: each Sunday the worst conversion percentage is the only
 marketing problem we work on that week.
@@ -43,8 +43,8 @@ conversion upgrade that exists.
 ## 90-day plan
 
 **Days 1–30 — Consistency + conversion plumbing.**
-Post the 30-day Fight Plan (The Corner). Put the site link in bio. Standardise
-"DM PATH". Log the Scoreboard every Sunday. Collect the first 3 real testimonials
+Post the 30-day Fight Plan (The Corner). Put the site link in bio. Keep "DM Start"
+as the single CTA everywhere. Log the Scoreboard every Sunday. Collect the first 3 real testimonials
 and swap them into the site.
 
 **Days 31–60 — Proof + product.**
@@ -68,7 +68,7 @@ monthly "paths" newsletter with one client story + one open slot count.
    account (schedule a whole week from The Corner in one click).
 5. CRM lite: leads/clients/sessions/payments in one place — build when client
    count passes ~15 and memory stops scaling.
-6. DM keyword auto-reply ("PATH" → intro booking link) via ManyChat or Meta's
+6. DM keyword auto-reply ("Start" → intro booking link) via ManyChat or Meta's
    native automation.
 
 ## Content system (summary — the full system lives in The Corner)
@@ -79,12 +79,25 @@ monthly "paths" newsletter with one client story + one open slot count.
 - Every 30 days: new block written, weighted by Scoreboard results and the Day-30
   audience poll.
 
+## Baseline (18 Jun – 17 Jul 2026, from IG Professional dashboard)
+
+- 313 followers · 79 posts total · 21 posts in the last 30 days
+- 11.5K views · 569 interactions · **+15 followers**
+- Read: volume is already there (~5 posts/week). Views→follower conversion
+  (~0.13%) is the weak link → fix packaging (hooks, first 2 seconds) and the
+  profile funnel (bio link → site), not output. This is the Fight Plan's job.
+
+## Business facts
+
+- Venue: Unique Boxing Gym, 413–415 High Street, Chatham ME4 4NU
+- WhatsApp: +44 7387 006088 · Email: ginakoju@gmail.com
+- Offers per IG bio: 1-1, 2-1, small groups · adults & teens · DM keyword "Start"
+- Pinned post: client testimonials (lift the 3 strongest lines onto the site)
+
 ## Open items needing Gbolan
 
-- WhatsApp number + email → into `site/index.html` (marked in the file).
-- Training location + city → FAQ and SEO copy.
-- Profile screenshots / top-post screenshots → so content can be tuned to what
-  the page already does well.
-- First real testimonials + before/after clips (with written consent) → replace
-  the example cards on the site.
+- Confirm launch pricing on the site matches what you actually charge
+  (£20 intro / £60 1-to-1 / £25 group / £249 Foundations are my proposals).
+- Paste the 3 best testimonial lines from the pinned post → onto the site cards.
+- Before/after clips with written consent → Results section + content.
 - Domain name (e.g. diversepaths.co.uk) when ready to deploy the site publicly.
