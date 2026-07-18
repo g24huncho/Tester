@@ -14,17 +14,18 @@ purpose (1-to-1 and groups capped at 4) is a feature — say it constantly.
 
 ## The offer ladder
 
-Gbolan's real model (confirmed 18 Jul): everything runs on **4-week blocks at a
-flat £27.50/session** — 1x/week £110 · 2x/week £220 · 3x/week £330, scaling the
-same for 4–5x/week. High-frequency clients sometimes get custom deals (one
-trained ~5x/week around £110/week) plus extras like a free sparring session.
+Gbolan's confirmed pricing (18 Jul):
 
-| Rung | Offer | Price | Job |
-|---|---|---|---|
-| 1 | Intro session | £20, credited to first block *(proposed — confirm)* | Kill the risk of saying yes |
-| 2 | 4-week block | £110 / £220 / £330 for 1–3x per week | The core product; upfront cash flow |
-| 3 | Foundations — 6-week programme | £330 (12 sessions, same flat rate) | Productised on-ramp for complete beginners; cohort = built-in retention |
-| 4 | Custom path (4–5x/week, 2-to-1, groups) | shaped per client | Capture the committed without a public price war |
+| Offer | Price | Notes |
+|---|---|---|
+| 1-to-1 single session | £30 | No discounted intro — Gbolan's call; first session is simply £30 |
+| 1-to-1 block · 4 weeks | 1x/wk £110 · 2x/wk £220 · 3x/wk £330 | Flat £27.50/session; blocks are 1-to-1 only; scales to 4–5x with custom deals |
+| Groups, per person/session | 2-to-1 £25 · 3-to-1 £20 · 4-to-1 £15 | |
+| Foundations — 6-week programme | TBC with Gbolan | He wants it; format/price open (proposal: small-group cohort £199 up front) |
+
+**Presentation principle (Gbolan's direction):** value-first, price-quiet. Lead
+with what a session includes; prices sit small and simple in a list. No big-number
+price cards — the site sells the coaching, not the invoice.
 
 Blocks and programmes are paid up front — cash flow first.
 
