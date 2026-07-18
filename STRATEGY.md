@@ -103,13 +103,15 @@ monthly "paths" newsletter with one client story + one open slot count.
 - Venue: Unique Boxing Gym, 413–415 High Street, Chatham ME4 4NU
 - WhatsApp: +44 7387 006088 · Email: ginakoju@gmail.com
 - Offers per IG bio: 1-1, 2-1, small groups · adults & teens · DM keyword "Start"
-- Public tag: **DP Coaching** (DP = Diverse Paths); logo incoming from Gbolan
+- Public tag: **DP Coaching** (DP = Diverse Paths); lockup extracted and in use
 - Testimonials received 18 Jul (Rosae, Ore, Ebenezer, Arturs — incl. an Amateur
   England International Belt winner); three now live on the site
 
 ## Open items needing Gbolan
 
 - Online coaching: parked as "coming soon" — build + price it when teaser demand shows up.
-- Photos received 18 Jul — corner shot + victory shot now on the site. Logo file still to come.
+- Photos + logo done 18 Jul — corner shot, victory shot, and the DP Coaching
+  lockup (extracted from the testimonial graphics) are live on the site. For
+  print/merch later, get the original vector logo file from whoever designed it.
 - Before/after clips with written consent → Results section + content.
 - Domain name (e.g. dpcoaching.co.uk / diversepaths.co.uk) to deploy publicly.
