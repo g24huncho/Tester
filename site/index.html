@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DP Coaching — Boxing in Chatham | Diverse Paths</title>
-<meta name="description" content="1-to-1, 2-to-1 and small-group boxing coaching with Gbolan Inakoju at Unique Boxing Gym, Chatham. Real technique, real fitness, real confidence — adults and teens. Book your intro session.">
+<meta name="description" content="1-to-1, 2-to-1 and small-group boxing coaching with Gbolahan Inakoju at Unique Boxing Gym, Chatham. Real technique, real fitness, real confidence — adults and teens. Book your intro session.">
 <meta property="og:title" content="DP Coaching — Diverse Paths | Boxing Coaching">
 <meta property="og:description" content="Different paths. Same destination. 1-to-1 and small-group boxing coaching for ordinary people who want an extraordinary standard.">
 <meta property="og:type" content="website">
@@ -17,7 +17,7 @@
   "name": "Diverse Paths Boxing Coaching",
   "alternateName": "DP Coaching",
   "description": "1-to-1, 2-to-1 and small-group boxing coaching for adults and teens at Unique Boxing Gym, Chatham.",
-  "founder": { "@type": "Person", "name": "Gbolan Inakoju" },
+  "founder": { "@type": "Person", "name": "Gbolahan Inakoju" },
   "address": { "@type": "PostalAddress", "streetAddress": "413-415 High Street", "addressLocality": "Chatham", "postalCode": "ME4 4NU", "addressCountry": "GB" },
   "telephone": "+447387006088",
   "email": "ginakoju@gmail.com",
@@ -252,6 +252,37 @@ nav.scrolled{border-bottom-color:var(--line)}
 .fineprint{margin-top:30px; color:var(--muted); font-size:14px}
 .fineprint code{font-family:ui-monospace,monospace; font-size:13px; color:var(--acc-2)}
 
+/* ---- testimonial carousel ---- */
+.tst-track{display:flex; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; padding:6px 2px 10px; scrollbar-width:none}
+.tst-track::-webkit-scrollbar{display:none}
+.tst-track .card{flex:0 0 min(86%, 380px); scroll-snap-align:start}
+.quote-card .qm{font-family:var(--serif); font-weight:700; font-size:54px; line-height:.55; color:var(--acc); height:24px; display:block}
+.tst-nav{display:flex; align-items:center; gap:18px; margin-top:18px}
+.tst-btn{width:42px; height:42px; border:1px solid var(--line); border-radius:50%; color:var(--text); font-size:17px; display:grid; place-items:center; transition:all .2s}
+.tst-btn:hover{border-color:var(--acc); color:var(--acc)}
+.tst-dots{display:flex; gap:8px}
+.dot{width:8px; height:8px; border-radius:50%; background:var(--line); padding:0; transition:background .2s}
+.dot.on{background:var(--acc)}
+
+/* ---- card book buttons ---- */
+.btn-book{margin-top:14px; justify-content:center}
+
+/* ---- back to top ---- */
+#toTop{position:fixed; right:18px; bottom:18px; z-index:60; width:46px; height:46px; border-radius:50%;
+  border:1px solid var(--acc); background:color-mix(in srgb, #0B0A0A 84%, transparent); color:#F3EEE7;
+  font-size:18px; display:grid; place-items:center; opacity:0; pointer-events:none; transition:opacity .3s;
+  backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); cursor:pointer}
+#toTop.show{opacity:1; pointer-events:auto}
+
+/* ---- enquiry ---- */
+.enquiry{margin-top:56px; max-width:600px}
+.enq-h{font-family:var(--display); font-variation-settings:var(--wide); font-weight:780; font-size:22px; text-transform:uppercase; margin:10px 0 16px}
+.enq-form{display:flex; flex-direction:column; gap:12px}
+.enq-form input,.enq-form textarea{background:var(--surface); border:1px solid var(--line); border-radius:3px;
+  color:var(--text); font-family:var(--serif); font-size:16px; padding:13px 14px; resize:vertical}
+.enq-form input:focus,.enq-form textarea:focus{outline:none; border-color:var(--acc)}
+.enq-form ::placeholder{color:var(--muted)}
+
 /* ---- footer ---- */
 footer{border-top:1px solid var(--line); padding:56px 0 40px; overflow:hidden}
 .foot-mark{
@@ -308,12 +339,12 @@ footer{border-top:1px solid var(--line); padding:56px 0 40px; overflow:hidden}
   <div class="wrap reveal">
     <p class="label">Why Diverse Paths</p>
     <blockquote>
-      DP stands for Diverse Paths — and the name is the whole method. No two people walk in here the same: different ages, different bodies, different reasons. So no two people get coached the same. The jab I teach you won't look like the jab I teach the next person. <strong>Same stance. Same one-two. Same destination. Victory.</strong>
+      DP stands for Diverse Paths, and it means exactly that: everyone who walks in here is different. Different ages, different bodies, different reasons for starting. Some pick it up fast; some need it slow and steady — both get there. There's no one way to learn boxing. There's your way, and my job is to find it. <strong>Different routes. Same goal. Same destination. Victory.</strong>
     </blockquote>
     <p class="aside">And how we get there matters. As your coach, I'm really a friend — someone in your corner, helping you understand yourself better. Boxing does that.</p>
     <div class="sig">
       <span class="sig-line"></span>
-      <p><b>Gbolan Inakoju</b> — Founder &amp; Head Coach</p>
+      <p><b>Gbolahan Inakoju</b> — Founder &amp; Head Coach</p>
     </div>
   </div>
 </section>
@@ -371,6 +402,7 @@ footer{border-top:1px solid var(--line); padding:56px 0 40px; overflow:hidden}
           <button class="opt" aria-pressed="false" data-p="£330" data-n="4-week block · 12 sessions">3x a week</button>
         </div>
         <div class="card-price"><span class="pv">£30</span><span class="pn">per session</span></div>
+        <a class="btn btn-solid btn-book" data-offer="1-to-1 private coaching" href="#book">Book this</a>
       </article>
       <article class="card offer reveal">
         <p class="label">Small group</p>
@@ -388,6 +420,7 @@ footer{border-top:1px solid var(--line); padding:56px 0 40px; overflow:hidden}
           <button class="opt" aria-pressed="false" data-p="£15" data-n="each · per session">4 people</button>
         </div>
         <div class="card-price"><span class="pv">£25</span><span class="pn">each · per session</span></div>
+        <a class="btn btn-solid btn-book" data-offer="small group session" href="#book">Book this</a>
       </article>
       <article class="card offer reveal">
         <span class="tag">Coming soon</span>
@@ -446,22 +479,38 @@ footer{border-top:1px solid var(--line); padding:56px 0 40px; overflow:hidden}
       <h2 class="display">Proof beats promises.</h2>
       <p class="lede">Real people. Real goals. Real results — in their own words.</p>
     </div>
-    <div class="grid3">
-      <article class="card quote-card reveal">
-        <span class="goal">Goal: Fitness &amp; self-defence</span>
-        <q>As a woman, I wanted to improve my fitness and learn how to defend myself — and the sessions have been perfect for that. I leave every session feeling accomplished and more confident.</q>
-        <p class="who">Rosae — 1-to-1 client</p>
-      </article>
-      <article class="card quote-card reveal">
-        <span class="goal">Goal: Building confidence</span>
-        <q>Boxing has taught me to face my weaknesses and push beyond my limits. Training with Gbolahan has shown me that I am capable of much more than I thought.</q>
-        <p class="who">Ore — 1-to-1 client</p>
-      </article>
-      <article class="card quote-card reveal">
-        <span class="goal">Goal: Boxing performance</span>
-        <q>Straight away he spotted things I was doing wrong and gave me practical drills that actually worked. After 6+ sessions with Gbolahan, I went on to win the Amateur England International Belt.</q>
-        <p class="who">Arturs — amateur boxer</p>
-      </article>
+    <div class="reveal">
+      <div class="tst-track" id="tstTrack">
+        <article class="card quote-card">
+          <span class="qm" aria-hidden="true">“</span>
+          <span class="goal">Goal: Fitness &amp; self-defence</span>
+          <q>As a woman, I wanted to improve my fitness and learn how to defend myself — and the sessions have been perfect for that. I leave every session feeling accomplished and more confident.</q>
+          <p class="who">Rosae — 1-to-1 client</p>
+        </article>
+        <article class="card quote-card">
+          <span class="qm" aria-hidden="true">“</span>
+          <span class="goal">Goal: Building confidence</span>
+          <q>Boxing has taught me to face my weaknesses and push beyond my limits. Training with Gbolahan has shown me that I am capable of much more than I thought.</q>
+          <p class="who">Ore — 1-to-1 client</p>
+        </article>
+        <article class="card quote-card">
+          <span class="qm" aria-hidden="true">“</span>
+          <span class="goal">Goal: Boxing performance</span>
+          <q>Straight away he spotted things I was doing wrong and gave me practical drills that actually worked. After 6+ sessions with Gbolahan, I went on to win the Amateur England International Belt.</q>
+          <p class="who">Arturs — amateur boxer</p>
+        </article>
+        <article class="card quote-card">
+          <span class="qm" aria-hidden="true">“</span>
+          <span class="goal">Goal: Boxing performance</span>
+          <q>My stamina, boxing IQ, timing and style have all evolved through DP Coaching — it's allowed me to gain wins in my boxing career. Would recommend to anyone.</q>
+          <p class="who">Ebenezer — competitive boxer</p>
+        </article>
+      </div>
+      <div class="tst-nav">
+        <button class="tst-btn" id="tstPrev" aria-label="Previous review">←</button>
+        <div class="tst-dots" id="tstDots"></div>
+        <button class="tst-btn" id="tstNext" aria-label="Next review">→</button>
+      </div>
     </div>
     <div class="contact-btns reveal" style="margin-top:28px">
       <a class="btn btn-ghost" href="https://www.instagram.com/diversepaths_" rel="noopener">More client stories — pinned on @diversepaths_</a>
@@ -515,11 +564,27 @@ footer{border-top:1px solid var(--line); padding:56px 0 40px; overflow:hidden}
     <h2 class="display">The hardest round<br>is booking the first one.</h2>
     <p class="lede">One message — tell me your goal. Get fit, learn to box properly, build confidence, learn to defend yourself — or sharpen up for competition. I'll build your first session around it, and you'll leave sweating, smiling, and knowing exactly what your path looks like.</p>
     <div class="contact-btns">
-      <a class="btn btn-solid" href="https://wa.me/447387006088?text=Hi%20Gbolan%2C%20I%27d%20like%20to%20book%20a%20boxing%20session.%20My%20goal%20is%3A%20" rel="noopener">WhatsApp — book a session</a>
+      <a class="btn btn-solid" href="https://wa.me/447387006088?text=Hi%20Gbolahan%2C%20I%27d%20like%20to%20book%20a%20boxing%20session.%20My%20goal%20is%3A%20" rel="noopener">WhatsApp — book a session</a>
       <a class="btn btn-ghost" href="https://ig.me/m/diversepaths_" rel="noopener">DM on Instagram</a>
+      <a class="btn btn-ghost" data-fb href="#" target="_blank" rel="noopener">Message on Facebook</a>
       <a class="btn btn-ghost" href="mailto:ginakoju@gmail.com?subject=Booking%20a%20session">Email</a>
     </div>
     <p class="fineprint">Sessions at Unique Boxing Gym · 413–415 High St, Chatham ME4 4NU. Prefer Instagram? DM <strong>“Start”</strong> to @diversepaths_.</p>
+    <div class="enquiry">
+      <p class="label">Or enquire here</p>
+      <h3 class="enq-h">Got a question? Ask it straight.</h3>
+      <div class="enq-form">
+        <input id="enqName" type="text" placeholder="Your name" autocomplete="name">
+        <textarea id="enqMsg" rows="4" placeholder="e.g. I've never boxed and I'm not that fit — is this really for me?"></textarea>
+        <div class="contact-btns" style="margin-top:4px">
+          <button class="btn btn-solid" id="enqWa" type="button">Send via WhatsApp</button>
+          <button class="btn btn-ghost" id="enqIg" type="button">Send on Instagram</button>
+          <button class="btn btn-ghost" id="enqFb" type="button">Send on Facebook</button>
+          <button class="btn btn-ghost" id="enqEm" type="button">Send via email</button>
+        </div>
+        <p class="fineprint" id="enqHint" style="display:none; margin-top:10px">Your question has been copied — just paste it into the chat that opens.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -528,13 +593,22 @@ footer{border-top:1px solid var(--line); padding:56px 0 40px; overflow:hidden}
     <p class="foot-mark" aria-hidden="true">DP Coaching</p>
     <div class="foot-row">
       <p>© 2026 DP Coaching — Diverse Paths · Unique Boxing Gym, Chatham</p>
-      <a href="https://www.instagram.com/diversepaths_" rel="noopener">Instagram — @diversepaths_</a>
+      <div style="display:flex; gap:22px; flex-wrap:wrap">
+        <a href="https://www.instagram.com/diversepaths_" rel="noopener">Instagram — @diversepaths_</a>
+        <a data-fb href="#" target="_blank" rel="noopener">Facebook</a>
+      </div>
     </div>
   </div>
 </footer>
 
+<button id="toTop" aria-label="Back to top">↑</button>
+
 <script>
 (function(){
+  /* Facebook page — swap this one line for the exact page URL when Gbolahan sends it */
+  var FB_PAGE = 'https://www.facebook.com/search/top?q=DP%20Coaching%20Diverse%20Paths%20boxing';
+  document.querySelectorAll('[data-fb]').forEach(function(a){ a.href = FB_PAGE; });
+
   var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* nav scroll state */
@@ -572,7 +646,15 @@ footer{border-top:1px solid var(--line); padding:56px 0 40px; overflow:hidden}
     entries.forEach(function(e){ if(e.isIntersecting){ rail.classList.add('on'); obs.disconnect(); } });
   }, {threshold:.15}).observe(rail);
 
-  /* price option pills */
+  /* price option pills + dynamic book links */
+  function syncCard(card){
+    var book = card.querySelector('.btn-book'); if (!book) return;
+    var sel = card.querySelector('.opt.on');
+    var txt = 'Hi Gbolahan, I\'d like to book: ' + book.dataset.offer +
+      (sel ? ' — ' + sel.textContent.trim() + ', ' + sel.dataset.p + ' (' + sel.dataset.n + ')' : '') +
+      '. My goal is: ';
+    book.href = 'https://wa.me/447387006088?text=' + encodeURIComponent(txt);
+  }
   document.querySelectorAll('.opts').forEach(function(g){
     g.addEventListener('click', function(e){
       var b = e.target.closest('.opt'); if (!b) return;
@@ -583,7 +665,63 @@ footer{border-top:1px solid var(--line); padding:56px 0 40px; overflow:hidden}
       var pr = g.parentElement.querySelector('.card-price');
       pr.querySelector('.pv').textContent = b.dataset.p;
       pr.querySelector('.pn').textContent = b.dataset.n;
+      syncCard(g.parentElement);
     });
+  });
+  document.querySelectorAll('#coaching .card').forEach(syncCard);
+
+  /* testimonial carousel */
+  var track = document.getElementById('tstTrack');
+  if (track){
+    var tCards = track.children, dots = document.getElementById('tstDots');
+    var step = function(){ return tCards[0].offsetWidth + 16; };
+    var current = function(){ return Math.round(track.scrollLeft / step()); };
+    var goTo = function(i){ track.scrollTo({left: i * step(), behavior: 'smooth'}); };
+    for (var i = 0; i < tCards.length; i++){
+      (function(idx){
+        var d = document.createElement('button');
+        d.className = 'dot' + (idx === 0 ? ' on' : '');
+        d.setAttribute('aria-label', 'Go to review ' + (idx + 1));
+        d.onclick = function(){ goTo(idx); };
+        dots.appendChild(d);
+      })(i);
+    }
+    document.getElementById('tstPrev').onclick = function(){ goTo(Math.max(0, current() - 1)); };
+    document.getElementById('tstNext').onclick = function(){ goTo(Math.min(tCards.length - 1, current() + 1)); };
+    track.addEventListener('scroll', function(){
+      var c = current();
+      dots.querySelectorAll('.dot').forEach(function(d, i){ d.classList.toggle('on', i === c); });
+    }, {passive:true});
+  }
+
+  /* back to top */
+  var toTop = document.getElementById('toTop');
+  addEventListener('scroll', function(){ toTop.classList.toggle('show', scrollY > 400); }, {passive:true});
+  toTop.addEventListener('click', function(){ scrollTo({top: 0, behavior: 'smooth'}); });
+
+  /* enquiry */
+  function enqText(){
+    var n = document.getElementById('enqName').value.trim();
+    var m = document.getElementById('enqMsg').value.trim();
+    if (!m){ document.getElementById('enqMsg').focus(); return null; }
+    return 'Hi Gbolahan' + (n ? ', I\'m ' + n : '') + '. Quick question: ' + m;
+  }
+  document.getElementById('enqWa').addEventListener('click', function(){
+    var t = enqText(); if (t) open('https://wa.me/447387006088?text=' + encodeURIComponent(t), '_blank', 'noopener');
+  });
+  function enqSocial(url){
+    var t = enqText(); if (!t) return;
+    var go = function(){
+      document.getElementById('enqHint').style.display = 'block';
+      open(url, '_blank', 'noopener');
+    };
+    (navigator.clipboard && navigator.clipboard.writeText) ? navigator.clipboard.writeText(t).then(go, go) : go();
+  }
+  document.getElementById('enqIg').addEventListener('click', function(){ enqSocial('https://ig.me/m/diversepaths_'); });
+  document.getElementById('enqFb').addEventListener('click', function(){ enqSocial(FB_PAGE); });
+  document.getElementById('enqEm').addEventListener('click', function(){
+    var t = enqText();
+    if (t) location.href = 'mailto:ginakoju@gmail.com?subject=' + encodeURIComponent('Question for DP Coaching') + '&body=' + encodeURIComponent(t);
   });
 
   /* faq accordion */

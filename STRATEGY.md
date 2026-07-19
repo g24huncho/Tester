@@ -14,16 +14,16 @@ purpose (1-to-1 and groups capped at 4) is a feature — say it constantly.
 
 ## The offer ladder
 
-Gbolan's confirmed pricing (18 Jul):
+Gbolahan's confirmed pricing (18 Jul):
 
 | Offer | Price | Notes |
 |---|---|---|
-| 1-to-1 single session | £30 | No discounted intro — Gbolan's call; first session is simply £30 |
+| 1-to-1 single session | £30 | No discounted intro — Gbolahan's call; first session is simply £30 |
 | 1-to-1 block · 4 weeks | 1x/wk £110 · 2x/wk £220 · 3x/wk £330 | Flat £27.50/session; blocks are 1-to-1 only; scales to 4–5x with custom deals |
 | Groups, per person/session | 2-to-1 £25 · 3-to-1 £20 · 4-to-1 £15 | |
-| Online coaching | **Coming soon — parked 18 Jul, not bookable** | Shown on site as locked; content teases it ("comment ONLINE") to measure demand before Gbolan builds it |
+| Online coaching | **Coming soon — parked 18 Jul, not bookable** | Shown on site as locked; content teases it ("comment ONLINE") to measure demand before Gbolahan builds it |
 
-**Presentation principle (Gbolan's direction):** value-first, price-quiet. Lead
+**Presentation principle (Gbolahan's direction):** value-first, price-quiet. Lead
 with what a session includes; prices sit small and simple in a list. No big-number
 price cards — the site sells the coaching, not the invoice.
 
@@ -81,6 +81,11 @@ monthly "paths" newsletter with one client story + one open slot count.
    count passes ~15 and memory stops scaling.
 6. DM keyword auto-reply ("Start" → intro booking link) via ManyChat or Meta's
    native automation.
+7. Google Business Profile (free, business.google.com) — real Google reviews +
+   Maps ranking for "boxing coach Chatham"; then add a "Review us on Google"
+   button to the site. This is the real version of on-site reviews.
+8. Calendly/Cal.com embed = true in-page booking with deposits (repeat of #3,
+   now that per-option WhatsApp booking is live as the interim).
 
 ## Content system (summary — the full system lives in The Corner)
 
@@ -107,7 +112,7 @@ monthly "paths" newsletter with one client story + one open slot count.
 - Testimonials received 18 Jul (Rosae, Ore, Ebenezer, Arturs — incl. an Amateur
   England International Belt winner); three now live on the site
 
-## Open items needing Gbolan
+## Open items needing Gbolahan
 
 - Online coaching: parked as "coming soon" — build + price it when teaser demand shows up.
 - Photos + logo done 18 Jul — corner shot, victory shot, and the DP Coaching
