@@ -73,8 +73,10 @@ monthly "paths" newsletter with one client story + one open slot count.
 
 1. ✅ Site (link-in-bio conversion page) — `site/index.html`
 2. ✅ Content engine + scoreboard — `studio/index.html` (The Corner)
-3. Booking: start with WhatsApp; move to Calendly/Cal.com embedded on the site when
-   volume justifies it (removes the back-and-forth, takes deposits).
+3. Booking philosophy (Gbolahan's call, 19 Jul): NO automated slot calendar.
+   Availability shifts daily, so every CTA starts a conversation — enquiries
+   arrive with goal + preferred days/times and Gbolahan confirms personally.
+   Revisit an automated calendar only if he asks for it.
 4. Instagram auto-publish via Meta Graph API once the account is a Professional
    account (schedule a whole week from The Corner in one click).
 5. CRM lite: leads/clients/sessions/payments in one place — build when client
@@ -84,8 +86,7 @@ monthly "paths" newsletter with one client story + one open slot count.
 7. Google Business Profile (free, business.google.com) — real Google reviews +
    Maps ranking for "boxing coach Chatham"; then add a "Review us on Google"
    button to the site. This is the real version of on-site reviews.
-8. Calendly/Cal.com embed = true in-page booking with deposits (repeat of #3,
-   now that per-option WhatsApp booking is live as the interim).
+8. (Removed — see #3: no automated booking until Gbolahan wants it.)
 
 ## Content system (summary — the full system lives in The Corner)
 
