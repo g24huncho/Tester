@@ -107,7 +107,8 @@ monthly "paths" newsletter with one client story + one open slot count.
 ## Business facts
 
 - Venue: Unique Boxing Gym, 413–415 High Street, Chatham ME4 4NU
-- WhatsApp: +44 7387 006088 · Email: ginakoju@gmail.com
+- WhatsApp: +44 7387 006088 · Email: diversepaths@outlook.com
+- Facebook: https://www.facebook.com/share/17vY5Jncav/ · Google: https://share.google/J468E7MNFB2pKGMoQ
 - Offers per IG bio: 1-1, 2-1, small groups · adults & teens · DM keyword "Start"
 - Public tag: **DP Coaching** (DP = Diverse Paths); lockup extracted and in use
 - Testimonials received 18 Jul (Rosae, Ore, Ebenezer, Arturs — incl. an Amateur
