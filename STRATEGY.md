@@ -121,4 +121,4 @@ monthly "paths" newsletter with one client story + one open slot count.
   lockup (extracted from the testimonial graphics) are live on the site. For
   print/merch later, get the original vector logo file from whoever designed it.
 - Before/after clips with written consent → Results section + content.
-- Domain name (e.g. dpcoaching.co.uk / diversepaths.co.uk) to deploy publicly.
+- Domain: buy **dpcoaching.uk** (registry-confirmed available 19 Jul; .co.uk variants taken; backup: diversepaths.uk) — runbook in DEPLOY.md.

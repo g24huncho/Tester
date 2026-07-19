@@ -1,13 +1,13 @@
-# Going fully official — dpcoaching.co.uk
+# Going fully official — dpcoaching.uk
 
 Everything technical is already done: the public site lives in `docs/` and is
-pre-configured for **dpcoaching.co.uk** (the `docs/CNAME` file). Two things need
+pre-configured for **dpcoaching.uk** (the `docs/CNAME` file). Two things need
 Gbolahan's card and login — about 10 minutes total.
 
 ## Part 1 — Buy the domain (~£10/year, 3 min)
 
 1. Go to **namecheap.com** (or any registrar).
-2. Search **dpcoaching.co.uk** → it was available as of 19 Jul 2026 → buy it.
+2. Search **dpcoaching.uk** → availability confirmed against the Nominet registry on 19 Jul 2026; dpcoaching.co.uk and diversepaths.co.uk are taken — backup choice: diversepaths.uk → buy it.
    Skip every add-on they offer (hosting, email, SSL — not needed).
 
 ## Part 2 — Switch the site on (2 min)
@@ -20,7 +20,7 @@ Gbolahan's card and login — about 10 minutes total.
 
 ## Part 3 — Point the domain at the site (5 min)
 
-In the registrar's DNS settings for dpcoaching.co.uk, add exactly these records:
+In the registrar's DNS settings for dpcoaching.uk, add exactly these records:
 
 | Type  | Host | Value               |
 |-------|------|---------------------|
@@ -34,11 +34,11 @@ In the registrar's DNS settings for dpcoaching.co.uk, add exactly these records:
 
 ## Part 4 — Tell GitHub the domain (1 min)
 
-Back on **Settings → Pages**: type **dpcoaching.co.uk** into *Custom domain* →
+Back on **Settings → Pages**: type **dpcoaching.uk** into *Custom domain* →
 Save. Wait for the DNS check (can take a few minutes to a few hours), then tick
 **Enforce HTTPS**.
 
-Done: **https://dpcoaching.co.uk** — put it in the Instagram and Facebook bios.
+Done: **https://dpcoaching.uk** — put it in the Instagram and Facebook bios.
 
 ## Notes
 
