@@ -18,8 +18,8 @@ This repo is the operating system for the business.
 2. Contact details, location and DM keyword ("Start") are wired in. Before going
    public, swap the example testimonial cards for real client words from the
    pinned Instagram post.
-3. To deploy: point any static host (Netlify, Cloudflare Pages, GitHub Pages) at
-   the `site/` folder and connect a domain.
+3. Deployment: the public copy lives in `docs/` (pre-wired for
+   dpcoaching.co.uk via `docs/CNAME`) — full go-live runbook in `DEPLOY.md`.
 
 ## Using The Corner
 
