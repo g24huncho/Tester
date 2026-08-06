@@ -9,6 +9,7 @@
   /* ============================================================
      DP COMBAT — Brand system
      Discipline. Performance. Progression.
+     Identity: the DP mark — red D, white P — on the dark gym.
      ============================================================ */
   :root {
     --ink:        #07070a;   /* near-black canvas — the dark gym */
@@ -17,12 +18,15 @@
     --line:       #23232e;
     --text:       #f2f0ea;
     --text-dim:   #8d8c96;
-    --gold-deep:  #6d5518;   /* championship metal ramp */
-    --gold:       #c9a24a;
-    --gold-hi:    #f7e7ae;
-    --red:        #d7263d;   /* corner red — sparing accent only */
+    --steel-deep: #4a4a55;   /* polished championship steel ramp */
+    --steel:      #b9bac6;
+    --steel-hi:   #f4f5fa;
+    --red:        #ff0000;   /* the D. One job: the "go" action. */
     --radius: 18px;
     --tap-min: 64px;         /* glove-friendly minimum tap target */
+    /* The DP mark (transparent PNG), used as image and as sheen mask */
+    --mark: url("data:image/png;base64,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");
+    --mark-ratio: 447 / 569;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -35,7 +39,7 @@
     overflow-x: hidden;
   }
   button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
-  button:focus-visible, a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+  button:focus-visible, a:focus-visible { outline: 2px solid var(--steel); outline-offset: 3px; border-radius: 6px; }
 
   .condensed {
     font-family: "Arial Narrow", "Helvetica Neue Condensed", -apple-system, sans-serif;
@@ -44,12 +48,12 @@
     text-transform: uppercase;
   }
 
-  /* Polished championship metal — used for the wordmark */
+  /* Polished championship steel — used for the COMBAT wordmark */
   .metal {
     background: linear-gradient(100deg,
-      #2e250c 0%, var(--gold-deep) 14%, var(--gold) 32%,
-      var(--gold-hi) 47%, #fffbe8 50%, var(--gold-hi) 53%,
-      var(--gold) 68%, var(--gold-deep) 86%, #2e250c 100%);
+      #22222a 0%, var(--steel-deep) 14%, var(--steel) 32%,
+      var(--steel-hi) 47%, #ffffff 50%, var(--steel-hi) 53%,
+      var(--steel) 68%, var(--steel-deep) 86%, #22222a 100%);
     background-size: 250% 100%;
     background-position: 100% 0;
     -webkit-background-clip: text;
@@ -57,9 +61,30 @@
     color: transparent;
   }
 
+  /* The DP mark itself, plus a light sweep clipped to its letterforms */
+  .logo {
+    position: relative;
+    aspect-ratio: var(--mark-ratio);
+  }
+  .logo::before {
+    content: ""; position: absolute; inset: 0;
+    background: var(--mark) center / contain no-repeat;
+    filter: drop-shadow(0 14px 44px rgba(0,0,0,.65));
+  }
+  .logo .sheen {
+    position: absolute; inset: 0;
+    -webkit-mask: var(--mark) center / contain no-repeat;
+    mask: var(--mark) center / contain no-repeat;
+    background: linear-gradient(115deg,
+      transparent 32%, rgba(255,255,255,.9) 50%, transparent 68%);
+    background-size: 260% 100%;
+    background-position: 130% 0;
+    pointer-events: none;
+  }
+
   /* ============================================================
      LAUNCH SEQUENCE
-     Dark → spotlight → punch impact → metal reveal → light sweep
+     Dark → spotlight → punch impact → the mark → light sweep
      ============================================================ */
   #splash {
     position: fixed; inset: 0; z-index: 100;
@@ -83,12 +108,12 @@
     40%, 60% { transform: translate(4px, -1px); }
   }
 
-  /* Spotlight — a single overhead beam finding the metal in the dark */
+  /* Spotlight — a single cold overhead beam finding the mark */
   .spotlight {
     position: absolute; inset: -20%;
     background:
       radial-gradient(ellipse 42% 34% at 50% 44%,
-        rgba(247,231,174,.14) 0%, rgba(201,162,74,.05) 45%, transparent 70%);
+        rgba(240,241,250,.13) 0%, rgba(185,186,198,.05) 45%, transparent 70%);
     opacity: 0;
     transition: opacity 2.2s ease;
     pointer-events: none;
@@ -109,7 +134,7 @@
   .shockwave {
     position: absolute; left: 50%; top: 47%;
     width: 12px; height: 12px; margin: -6px 0 0 -6px;
-    border: 2px solid rgba(247,231,174,.8);
+    border: 2px solid rgba(255,40,40,.85);
     border-radius: 50%;
     opacity: 0; pointer-events: none;
   }
@@ -130,29 +155,28 @@
     100% { opacity: 1; transform: scale(1); }
   }
 
-  .mark .dp {
-    font-size: clamp(92px, 24vw, 190px);
-    font-weight: 900;
-    line-height: .9;
-    letter-spacing: .02em;
+  .mark .logo {
+    width: clamp(150px, 40vw, 230px);
+    margin: 0 auto;
   }
   .mark .combat {
-    font-size: clamp(22px, 6vw, 44px);
-    font-weight: 700;
+    font-size: clamp(24px, 6.4vw, 46px);
+    font-weight: 800;
     letter-spacing: .52em;
     text-indent: .52em; /* optically recenters tracked type */
-    margin-top: 10px;
+    margin-top: 26px;
   }
-  /* Light travelling across the metal */
+  /* Light travelling across the metal — wordmark and logo together */
   #splash.sweep .metal { animation: sweep 2.6s cubic-bezier(.4,0,.2,1) both; }
+  #splash.sweep .logo .sheen { animation: sweep 2.6s cubic-bezier(.4,0,.2,1) both; }
   @keyframes sweep {
-    0%   { background-position: 100% 0; }
-    100% { background-position: 0% 0; }
+    0%   { background-position: 130% 0; }
+    100% { background-position: -30% 0; }
   }
 
   .mark .rule {
     width: 0; height: 1px; margin: 26px auto 0;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    background: linear-gradient(90deg, transparent, var(--red), transparent);
     transition: width 1.4s cubic-bezier(.16,.84,.3,1);
   }
   #splash.sweep .rule { width: min(70vw, 420px); }
@@ -178,18 +202,18 @@
   .enter button {
     min-height: var(--tap-min);
     padding: 18px 54px;
-    border: 1px solid rgba(201,162,74,.55);
+    border: 1px solid rgba(244,245,250,.4);
     border-radius: 999px;
-    color: var(--gold-hi);
+    color: var(--steel-hi);
     font-weight: 700;
     letter-spacing: .3em; text-indent: .3em; text-transform: uppercase;
     font-size: 14px;
-    background: rgba(201,162,74,.06);
+    background: rgba(244,245,250,.05);
     animation: breathe 2.6s ease-in-out infinite;
   }
   @keyframes breathe {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(201,162,74,0); }
-    50%      { box-shadow: 0 0 34px 0 rgba(201,162,74,.22); }
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); }
+    50%      { box-shadow: 0 0 34px 0 rgba(255,0,0,.25); }
   }
 
   .skip {
@@ -214,9 +238,9 @@
     display: flex; align-items: center; justify-content: space-between;
     padding: max(18px, env(safe-area-inset-top)) 2px 6px;
   }
-  .brandmark { display: flex; align-items: baseline; gap: 10px; }
-  .brandmark .dp { font-weight: 900; font-size: 26px; }
-  .brandmark .combat { font-size: 12px; font-weight: 700; letter-spacing: .34em; color: var(--text-dim); text-transform: uppercase; }
+  .brandmark { display: flex; align-items: center; gap: 12px; }
+  .brandmark .logo { width: 30px; }
+  .brandmark .combat { font-size: 13px; font-weight: 800; letter-spacing: .34em; color: var(--text); text-transform: uppercase; }
 
   #soundToggle {
     min-width: 56px; min-height: 48px;
@@ -236,7 +260,7 @@
   .hero .motto {
     margin-top: 12px; color: var(--text-dim); font-size: 15px;
   }
-  .hero .motto b { color: var(--gold); font-weight: 700; }
+  .hero .motto b { color: var(--text); font-weight: 700; }
 
   /* Primary action — reachable in one motion, with gloves on */
   .cta {
@@ -244,27 +268,28 @@
     margin-top: 24px;
     min-height: 76px;
     border-radius: var(--radius);
-    background: linear-gradient(140deg, #1b1508, #241b09 45%, #1b1508);
-    border: 1px solid rgba(201,162,74,.5);
+    background: linear-gradient(140deg, #16161d, #1c1c25 45%, #14141b);
+    border: 1px solid rgba(244,245,250,.28);
+    border-left: 4px solid var(--red);
     padding: 20px 24px;
     text-align: left;
     position: relative; overflow: hidden;
     transition: transform .12s ease;
   }
   .cta:active { transform: scale(.985); }
-  .cta::after { /* resting sheen so the metal never looks flat */
+  .cta::after { /* resting sheen so the steel never looks flat */
     content: ""; position: absolute; inset: 0;
-    background: linear-gradient(100deg, transparent 30%, rgba(247,231,174,.08) 50%, transparent 70%);
+    background: linear-gradient(100deg, transparent 30%, rgba(244,245,250,.07) 50%, transparent 70%);
     background-size: 250% 100%;
     animation: idle-sheen 5.5s ease-in-out infinite;
     pointer-events: none;
   }
   @keyframes idle-sheen { 0%,100% { background-position: 120% 0; } 50% { background-position: -20% 0; } }
-  .cta .k { display: block; color: var(--gold-hi); font-weight: 800; font-size: 20px; letter-spacing: .02em; padding-right: 36px; }
+  .cta .k { display: block; color: var(--steel-hi); font-weight: 800; font-size: 20px; letter-spacing: .02em; padding-right: 36px; }
   .cta .s { display: block; color: var(--text-dim); font-size: 14px; margin-top: 5px; padding-right: 36px; }
   .cta .go {
     position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
-    color: var(--gold); font-size: 22px;
+    color: var(--red); font-size: 22px;
   }
 
   .section-label {
@@ -285,14 +310,14 @@
     display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
     transition: transform .12s ease, border-color .2s ease;
   }
-  .tile:active { transform: scale(.97); border-color: rgba(201,162,74,.5); }
+  .tile:active { transform: scale(.97); border-color: rgba(255,0,0,.55); }
   .tile .ico { font-size: 27px; line-height: 1; }
   .tile .t  { display: block; font-weight: 800; font-size: 16px; }
   .tile .d  { display: block; color: var(--text-dim); font-size: 12.5px; margin-top: 4px; line-height: 1.35; }
   .tile.adv .badge {
     align-self: flex-start;
     font-size: 10px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase;
-    color: var(--gold); border: 1px solid rgba(201,162,74,.45);
+    color: var(--steel-hi); border: 1px solid rgba(244,245,250,.4);
     padding: 3px 8px; border-radius: 999px;
   }
 
@@ -307,10 +332,10 @@
     width: 100%; max-width: 520px;
     min-height: var(--tap-min);
     border-radius: 999px;
-    background: var(--red);
+    background: linear-gradient(160deg, #ff1a1a, #e00000 60%, #c40000);
     color: #fff; font-weight: 900; font-size: 17px;
     letter-spacing: .24em; text-indent: .24em; text-transform: uppercase;
-    box-shadow: 0 8px 30px rgba(215,38,61,.35);
+    box-shadow: 0 8px 30px rgba(255,0,0,.32);
     transition: transform .12s ease;
   }
   .quickbar button:active { transform: scale(.97); }
@@ -349,7 +374,7 @@
 
   <div class="stage">
     <div class="mark">
-      <div class="dp metal condensed">DP</div>
+      <div class="logo" role="img" aria-label="DP monogram"><div class="sheen"></div></div>
       <div class="combat metal condensed">Combat</div>
       <div class="rule" aria-hidden="true"></div>
       <div class="tagline condensed">Train smarter · Fight better</div>
@@ -367,7 +392,7 @@
   <div class="shell">
     <header class="top">
       <div class="brandmark">
-        <span class="dp metal condensed">DP</span>
+        <div class="logo" role="img" aria-label="DP monogram"><div class="sheen"></div></div>
         <span class="combat condensed">Combat</span>
       </div>
       <button id="soundToggle" aria-label="Toggle sound" aria-pressed="true">🔔</button>
@@ -531,7 +556,7 @@
         var beam = Math.max(0, 1 - (dx * dx / 0.055 + dy * dy / 0.035));
         var tw = 0.6 + 0.4 * Math.sin(ts / 900 + m.ph);
         ctx2d.globalAlpha = m.a * beam * tw;
-        ctx2d.fillStyle = "#f7e7ae";
+        ctx2d.fillStyle = "#eef0fa";
         ctx2d.beginPath();
         ctx2d.arc(m.x * W, m.y * H, m.r, 0, Math.PI * 2);
         ctx2d.fill();
@@ -542,7 +567,7 @@
   }
   function stopDust() { cancelAnimationFrame(dustRAF); }
 
-  /* ---------- the opening: dark → light → impact → metal ---------- */
+  /* ---------- the opening: dark → light → impact → the mark ---------- */
   var splash = document.getElementById("splash");
   var home = document.getElementById("home");
   var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
