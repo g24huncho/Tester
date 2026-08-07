@@ -48,9 +48,10 @@ Every metal is a gradient ramp with a travelling sheen; every background carries
 light (radial tungsten glow + film grain overlay), never a flat fill.
 Red is scarce — if red appears twice on one screen, remove one.
 
-**Type** — Anton (embedded) for display: huge, uppercase, fight-poster confident.
-Oswald (embedded) for labels and data: letterspaced small caps like engraved
-nameplates, tabular numerals on the clock. Body copy stays sentence-case and calm.
+**Type** — restrained, product-first. System text face for reading; Oswald
+(embedded) for labels, session names and clock digits — engraved small caps and
+tabular numerals; Anton (embedded) reserved for the wordmark and the training
+phase word only. Display type never substitutes for hierarchy.
 
 **Motion** — everything settles like hung metal: fast attack, long decisive
 ease-out (`cubic-bezier(.16,.84,.3,1)`). Nothing bounces. Nothing is cute.
@@ -94,3 +95,25 @@ so a fighter at the gym starts a session in one tap.
 - No nested menus between the fighter and starting a session.
 - Large type, high contrast on near-black.
 - Full `prefers-reduced-motion` support; visible focus rings for keyboard use.
+
+## Modes — two workspaces, one product
+
+DP Combat adapts to the user's role. This is architecture, not a menu option.
+
+| | Fighter Mode | Coach Mode |
+|---|---|---|
+| Room | Fight Camp (tungsten, red accent) | Coach's Office (cooler light, steel accent) |
+| Voice | **The Corner** briefs the fighter | **Assistant** briefs the coach |
+| Home | Corner briefing, next session, camp timeline, camp rounds ring, streak | Tonight's schedule, athlete roster rows, review queue with AI notes |
+| Primary action | Begin Training | Plan Session |
+
+Switching modes is a workspace transition: the current room exits downward, the
+lighting hue crossfades, and the new room enters with staged choreography.
+
+## Signature interactions
+
+- The Corner greets on every open — briefing lines speak in sequence, waveform live.
+- A pre-session briefing (opponent, plan, goal) plays before every session, then the bell.
+- The camp rounds ring fills like championship rounds — twelve segments, one per session won.
+- The fight camp timeline is a line of nights ending at a fight-night flag, never a calendar.
+- Bells, corner clacks and haptics mark every round transition.

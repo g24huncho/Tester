@@ -3,14 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#080606">
-<title>DP Combat — Fight Camp</title>
+<meta name="theme-color" content="#0a0908">
+<title>DP Combat</title>
 <style>
   /* ================================================================
-     DP COMBAT — CAMP
-     Backbone: fight-camp editorial. Organs: the INSTRUMENT readiness
-     dial, THE GYM's tungsten lighting for the opening and training.
-     Materials: matte black under warm light, leather, brass, steel.
+     DP COMBAT — an operating system for fighters.
+     v3: product discipline. Restrained type, layered materials,
+     intelligent coaching, and two workspaces: Fighter and Coach.
      ================================================================ */
   @font-face {
     font-family: "Anton";
@@ -29,417 +28,449 @@
   }
 
   :root {
-    --black:   #080606;                 /* the gym after hours       */
-    --coal:    #0e0b0a;
-    --smoke:   #17120f;
-    --line:    rgba(214,182,130,.14);   /* warm hairlines, not grey  */
-    --bone:    #ede5d8;                 /* warm white under tungsten */
-    --dust:    #9a8d7c;
-    --faint:   #5c5348;
-    --brass:   #c9a24a;
+    --bg:      #0a0908;
+    --sf1:     #14110f;                    /* card surface            */
+    --sf2:     #1b1714;                    /* raised surface          */
+    --hair:    rgba(235,220,195,.09);      /* warm hairline           */
+    --hair-2:  rgba(235,220,195,.16);
+    --t1:      #f0ebe2;
+    --t2:      #a89f92;
+    --t3:      #6b6459;
+    --brass:   #c9a24a;                    /* The Corner. Only hers.  */
     --brass-hi:#ecd28c;
-    --red:     #e8271f;
-    --red-hi:  #ff5a45;
-    --tap: 64px;
+    --red:     #e03e34;                    /* accent. one job.        */
+    --red-deep:#a8221a;
+    --accent:      var(--red);             /* mode-switched           */
+    --accent-deep: var(--red-deep);
+    --glowhue: 255,214,150;                /* tungsten                */
+    --tap: 60px;
+    --ease: cubic-bezier(.22,.8,.26,1);
     --mark: url("data:image/png;base64,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");
+  }
+  body[data-mode="coach"] {
+    --accent: #6f96b4;                     /* steel — a cooler room   */
+    --accent-deep: #3f6076;
+    --glowhue: 170,200,230;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { height: 100%; }
   body {
-    background: var(--black);
-    color: var(--bone);
-    font-family: "Oswald", -apple-system, "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--t1);
+    font-family: -apple-system, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
   button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
-  button:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; border-radius: 8px; }
+  button:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; border-radius: 10px; }
 
+  .os { font-family: "Oswald", -apple-system, sans-serif; }
   .anton { font-family: "Anton", "Arial Narrow", sans-serif; font-weight: 400; text-transform: uppercase; }
-  .label { font-weight: 600; text-transform: uppercase; letter-spacing: .32em; font-size: 11px; color: var(--faint); }
+  .lbl { font-family: "Oswald"; font-weight: 600; font-size: 10.5px; letter-spacing: .26em; text-transform: uppercase; color: var(--t3); }
 
-  /* Film grain over everything — kills the flat digital look */
+  /* film grain — the room is never digitally clean */
   .grain {
     position: fixed; inset: -50%; z-index: 90; pointer-events: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
-    opacity: .05; mix-blend-mode: overlay;
+    opacity: .045; mix-blend-mode: overlay;
     animation: grain 1.1s steps(3) infinite;
   }
-  @keyframes grain {
-    0%,100% { transform: translate(0,0); }
-    33% { transform: translate(-2%,1%); }
-    66% { transform: translate(1%,-2%); }
+  @keyframes grain { 0%,100% { transform: translate(0,0);} 33% { transform: translate(-2%,1%);} 66% { transform: translate(1%,-2%);} }
+
+  /* room light — hue follows the active mode */
+  .roomlight {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(110% 46% at 50% -8%, rgba(var(--glowhue), .085), transparent 62%),
+      radial-gradient(70% 34% at 88% 108%, rgba(var(--glowhue), .04), transparent 60%);
+    transition: opacity 1s ease;
   }
 
-  /* The DP mark: metal plate + light that can travel across it */
   .mark { position: relative; aspect-ratio: 447/569; }
   .mark::before {
     content: ""; position: absolute; inset: 0;
     background: var(--mark) center/contain no-repeat;
-    filter: drop-shadow(0 18px 50px rgba(0,0,0,.8));
+    filter: drop-shadow(0 14px 40px rgba(0,0,0,.8));
   }
   .mark .shine {
     position: absolute; inset: 0; pointer-events: none;
     -webkit-mask: var(--mark) center/contain no-repeat;
     mask: var(--mark) center/contain no-repeat;
-    background: linear-gradient(112deg,
-      transparent 30%, rgba(255,241,214,.95) 49%, rgba(255,255,255,1) 50%,
-      rgba(255,241,214,.95) 51%, transparent 70%);
+    background: linear-gradient(112deg, transparent 30%, rgba(255,241,214,.95) 49%, #fff 50%, rgba(255,241,214,.95) 51%, transparent 70%);
     background-size: 300% 100%; background-position: 140% 0;
   }
-
-  /* Championship metal for type */
   .metal {
     background: linear-gradient(97deg,
       #4a4438 0%, #8d8271 18%, #d9cdb9 38%, #fffbef 49%, #fff 50%, #fffbef 51%,
       #d9cdb9 62%, #8d8271 82%, #4a4438 100%);
     background-size: 260% 100%; background-position: 130% 0;
     -webkit-background-clip: text; background-clip: text; color: transparent;
-    animation: metalloop 7s cubic-bezier(.4,0,.2,1) infinite;
-  }
-  .metal-red {
-    background: linear-gradient(97deg,
-      #7c130e 0%, #c1201a 30%, #ff4a38 46%, #ffb49e 50%, #ff4a38 54%, #c1201a 70%, #7c130e 100%);
-    background-size: 260% 100%; background-position: 130% 0;
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-    animation: metalloop 7s cubic-bezier(.4,0,.2,1) infinite .35s;
-  }
-  @keyframes metalloop {
-    0%, 62%, 100% { background-position: 130% 0; }
-    30%, 40% { background-position: -30% 0; }
   }
 
   /* ================================================================
-     VIEW 1 — THE OPENING
-     A lamp flickers on in a dark gym. The sign is metal. Then the bell.
+     OPENING — unchanged in spirit: the lamp, the sign, the bell.
      ================================================================ */
   #opening {
-    position: fixed; inset: 0; z-index: 100; background: #030202;
-    overflow: hidden;
+    position: fixed; inset: 0; z-index: 100; background: #030202; overflow: hidden;
     transition: opacity 1.1s ease, visibility 1.1s;
   }
   #opening.done { opacity: 0; visibility: hidden; pointer-events: none; }
-
-  /* the hanging lamp: cone + hot core, flickers alive */
   .lamp {
     position: absolute; left: 50%; top: -4%; transform: translateX(-50%);
     width: 180%; height: 92%; pointer-events: none; opacity: 0;
     background:
-      radial-gradient(46% 8% at 50% 3%, rgba(255,214,150,.34), transparent 60%),
-      radial-gradient(42% 80% at 50% 0%, rgba(255,224,170,.16) 0%, rgba(255,214,150,.06) 46%, transparent 72%);
+      radial-gradient(46% 8% at 50% 3%, rgba(255,214,150,.32), transparent 60%),
+      radial-gradient(42% 80% at 50% 0%, rgba(255,224,170,.15) 0%, rgba(255,214,150,.055) 46%, transparent 72%);
   }
   #opening.lit .lamp { animation: flicker 1.6s linear both; }
   #opening.steady .lamp { opacity: 1; animation: lampsway 9s ease-in-out infinite; }
   @keyframes flicker {
-    0% { opacity: 0; } 6% { opacity: .9; } 10% { opacity: .05; }
-    18% { opacity: .7; } 24% { opacity: .1; } 36% { opacity: .95; }
-    44% { opacity: .55; } 100% { opacity: 1; }
+    0% { opacity: 0; } 6% { opacity: .9; } 10% { opacity: .05; } 18% { opacity: .7; }
+    24% { opacity: .1; } 36% { opacity: .95; } 44% { opacity: .55; } 100% { opacity: 1; }
   }
-  @keyframes lampsway {
-    0%,100% { transform: translateX(-50%) rotate(0deg); }
-    50% { transform: translateX(-51%) rotate(.4deg); }
-  }
+  @keyframes lampsway { 0%,100% { transform: translateX(-50%) rotate(0);} 50% { transform: translateX(-51%) rotate(.4deg);} }
   #dust { position: absolute; inset: 0; pointer-events: none; }
-
-  #opening .stage {
-    position: absolute; inset: 0;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    padding-bottom: 8vh;
-  }
+  #opening .stage { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-bottom: 8vh; }
   #opening.hit .stage { animation: shake .5s cubic-bezier(.36,.07,.19,.97) both; }
   @keyframes shake {
-    10%,90% { transform: translate(-1px,1px); } 30%,70% { transform: translate(-5px,2px); }
-    40%,60% { transform: translate(5px,-2px); } 50% { transform: translate(-3px,1px); }
+    10%,90% { transform: translate(-1px,1px);} 30%,70% { transform: translate(-5px,2px);}
+    40%,60% { transform: translate(5px,-2px);} 50% { transform: translate(-3px,1px);}
   }
-
   .sign { opacity: 0; transform: translateY(-14px); text-align: center; }
-  #opening.lit .sign { animation: signin 1.7s cubic-bezier(.16,.84,.3,1) .35s both; }
+  #opening.lit .sign { animation: signin 1.7s var(--ease) .35s both; }
   @keyframes signin {
     0% { opacity: 0; transform: translateY(-14px); filter: blur(5px); }
     45% { opacity: 1; filter: blur(0); }
     100% { opacity: 1; transform: translateY(0); }
   }
-  .sign .mark { width: clamp(150px, 38vw, 220px); margin: 0 auto; }
+  .sign .mark { width: clamp(140px, 34vw, 200px); margin: 0 auto; }
   #opening.sweep .mark .shine { animation: sweep 2.4s cubic-bezier(.45,0,.2,1) both; }
   @keyframes sweep { to { background-position: -40% 0; } }
-
-  .sign .word {
-    margin-top: 1.5vh;
-    font-size: clamp(46px, 13vw, 92px);
-    letter-spacing: .3em; text-indent: .3em; line-height: 1;
-  }
-  .sign .word .metal { animation: none; }
-  #opening.sweep .word .metal { animation: sweep 2.4s cubic-bezier(.45,0,.2,1) both; }
-
-  /* the sign's reflection in the floor */
   .sign .refl {
-    margin: 6px auto 0; width: clamp(150px, 38vw, 220px); aspect-ratio: 447/320;
+    margin: 6px auto 0; width: clamp(140px, 34vw, 200px); aspect-ratio: 447/320;
     background: var(--mark) center top/contain no-repeat;
-    transform: scaleY(-1);
-    opacity: .1; filter: blur(4px);
+    transform: scaleY(-1); opacity: .1; filter: blur(4px);
     -webkit-mask-image: linear-gradient(0deg, #000 0%, transparent 62%);
     mask-image: linear-gradient(0deg, #000 0%, transparent 62%);
   }
+  .sign .word { margin-top: 8px; font-size: clamp(30px, 8vw, 52px); letter-spacing: .34em; text-indent: .34em; line-height: 1; }
+  #opening.sweep .word .metal { animation: sweep 2.4s cubic-bezier(.45,0,.2,1) both; }
   .sign .tag {
-    margin-top: 4vh; font-size: clamp(12px, 3vw, 15px);
-    letter-spacing: .5em; text-indent: .5em; color: var(--dust);
-    font-weight: 500; text-transform: uppercase;
+    margin-top: 3.5vh; font-family: "Oswald"; font-weight: 500;
+    font-size: 12px; letter-spacing: .5em; text-indent: .5em; color: var(--t3); text-transform: uppercase;
     opacity: 0; transition: opacity 1.6s ease .3s;
   }
   #opening.sweep .tag { opacity: 1; }
-
   .flash { position: absolute; inset: 0; background: #fff6e6; opacity: 0; pointer-events: none; }
   #opening.hit .flash { animation: flash .55s ease-out both; }
-  @keyframes flash { 0% { opacity: .5; } 100% { opacity: 0; } }
-
+  @keyframes flash { 0% { opacity: .45; } 100% { opacity: 0; } }
   .enter {
-    position: absolute; left: 0; right: 0;
-    bottom: max(44px, env(safe-area-inset-bottom));
-    display: flex; justify-content: center;
-    opacity: 0; transition: opacity .9s ease; pointer-events: none;
+    position: absolute; left: 0; right: 0; bottom: max(44px, env(safe-area-inset-bottom));
+    display: flex; justify-content: center; opacity: 0; transition: opacity .9s ease; pointer-events: none;
   }
   #opening.ready .enter { opacity: 1; pointer-events: auto; }
   .enter button {
-    min-height: var(--tap); padding: 18px 52px;
-    font-weight: 600; letter-spacing: .4em; text-indent: .4em;
-    text-transform: uppercase; font-size: 14px; color: var(--brass-hi);
-    border: 1px solid rgba(201,162,74,.5); border-radius: 999px;
-    background: linear-gradient(180deg, rgba(201,162,74,.13), rgba(201,162,74,.03));
-    box-shadow: inset 0 1px 0 rgba(236,210,140,.25);
+    min-height: var(--tap); padding: 17px 48px;
+    font-family: "Oswald"; font-weight: 600; letter-spacing: .38em; text-indent: .38em;
+    text-transform: uppercase; font-size: 13px; color: var(--brass-hi);
+    border: 1px solid rgba(201,162,74,.45); border-radius: 999px;
+    background: linear-gradient(180deg, rgba(201,162,74,.12), rgba(201,162,74,.03));
+    box-shadow: inset 0 1px 0 rgba(236,210,140,.22);
     animation: breathe 2.8s ease-in-out infinite;
   }
   @keyframes breathe {
-    0%,100% { box-shadow: inset 0 1px 0 rgba(236,210,140,.25), 0 0 0 0 rgba(201,162,74,0); }
-    50%     { box-shadow: inset 0 1px 0 rgba(236,210,140,.25), 0 0 44px 0 rgba(201,162,74,.3); }
+    0%,100% { box-shadow: inset 0 1px 0 rgba(236,210,140,.22), 0 0 0 0 rgba(201,162,74,0); }
+    50% { box-shadow: inset 0 1px 0 rgba(236,210,140,.22), 0 0 40px 0 rgba(201,162,74,.26); }
   }
   .skip {
     position: absolute; top: max(16px, env(safe-area-inset-top)); right: 16px;
-    padding: 14px 18px; min-height: 48px; color: var(--faint);
-    font-size: 12px; letter-spacing: .26em; text-transform: uppercase; font-weight: 600;
+    padding: 14px 18px; min-height: 48px; color: var(--t3);
+    font-family: "Oswald"; font-size: 11px; letter-spacing: .26em; text-transform: uppercase; font-weight: 600;
   }
 
   /* ================================================================
-     VIEW 2 — HOME (CAMP)
+     THE WORKSPACE
      ================================================================ */
-  #home {
-    min-height: 100%; position: relative; display: none;
-    background:
-      radial-gradient(110% 52% at 50% -6%, rgba(255,220,160,.10), transparent 60%),
-      radial-gradient(90% 40% at 15% 110%, rgba(232,39,31,.05), transparent 60%),
-      linear-gradient(180deg, #0d0a08 0%, #080606 40%, #060505 100%);
-  }
-  #home.on { display: block; }
-  .shell { max-width: 560px; margin: 0 auto; padding: 0 22px 150px; }
-
-  /* staged entrance */
-  #home .rise { opacity: 0; transform: translateY(26px); }
-  #home.in .rise { animation: rise .9s cubic-bezier(.16,.84,.3,1) both; }
-  #home.in .rise.d1 { animation-delay: .08s; } #home.in .rise.d2 { animation-delay: .18s; }
-  #home.in .rise.d3 { animation-delay: .3s; }  #home.in .rise.d4 { animation-delay: .44s; }
-  #home.in .rise.d5 { animation-delay: .58s; }
-  @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+  #app { position: relative; z-index: 1; min-height: 100%; display: none; }
+  #app.on { display: block; }
+  .shell { max-width: 560px; margin: 0 auto; padding: 0 20px 56px; }
 
   header.top {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: max(20px, env(safe-area-inset-top)) 0 8px;
+    display: flex; align-items: center; gap: 12px;
+    padding: max(18px, env(safe-area-inset-top)) 0 14px;
   }
-  .top .brand { display: flex; align-items: center; gap: 13px; }
-  .top .mark { width: 30px; }
-  .top .campday { font-size: 11px; letter-spacing: .3em; color: var(--dust); font-weight: 600; text-transform: uppercase; }
+  .top .mark { width: 26px; flex: none; }
+  .top .ctx { flex: 1; min-width: 0; }
+  .top .ctx .l1 { font-family: "Oswald"; font-weight: 600; font-size: 12.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--t1); }
+  .top .ctx .l2 { font-size: 11.5px; color: var(--t3); margin-top: 2px; letter-spacing: .02em; }
+  .modechip {
+    display: flex; align-items: center; gap: 8px;
+    min-height: 44px; padding: 0 14px;
+    border: 1px solid var(--hair); border-radius: 999px;
+    background: linear-gradient(180deg, var(--sf2), var(--sf1));
+    box-shadow: inset 0 1px 0 rgba(240,235,226,.06);
+    font-family: "Oswald"; font-weight: 600; font-size: 10.5px; letter-spacing: .22em;
+    text-transform: uppercase; color: var(--t2);
+    transition: border-color .3s ease;
+  }
+  .modechip i { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 9px var(--accent); transition: background .6s, box-shadow .6s; }
   .iconbtn {
-    width: 52px; height: 48px; display: grid; place-items: center;
-    border: 1px solid var(--line); border-radius: 13px;
-    background: linear-gradient(180deg, #171310, #0e0b0a);
-    box-shadow: inset 0 1px 0 rgba(237,229,216,.07);
-  }
-  .iconbtn svg { display: block; }
-
-  .hero { padding-top: 30px; }
-  .greet { font-size: 15px; font-weight: 500; color: var(--dust); letter-spacing: .05em; }
-  .headline {
-    margin-top: 8px;
-    font-size: clamp(64px, 20vw, 112px);
-    line-height: .92; letter-spacing: .01em;
-  }
-  .headline .l2 { display: block; }
-  .hero .rule {
-    margin-top: 24px; height: 3px; width: 74px;
-    background: linear-gradient(90deg, var(--red), var(--red-hi));
-    box-shadow: 0 0 14px rgba(232,39,31,.5);
+    width: 46px; height: 44px; display: grid; place-items: center; flex: none;
+    border: 1px solid var(--hair); border-radius: 999px;
+    background: linear-gradient(180deg, var(--sf2), var(--sf1));
+    box-shadow: inset 0 1px 0 rgba(240,235,226,.06);
   }
 
-  .session { margin-top: 34px; }
-  .session .name {
-    margin-top: 10px; font-size: clamp(27px, 7.4vw, 34px);
-    letter-spacing: .04em; color: var(--bone);
+  /* cards: layered material, generous air */
+  .card {
+    position: relative; border-radius: 20px;
+    background: linear-gradient(165deg, var(--sf2) 0%, var(--sf1) 60%);
+    border: 1px solid var(--hair);
+    box-shadow: inset 0 1px 0 rgba(240,235,226,.07), 0 18px 40px rgba(0,0,0,.35);
+    padding: 20px;
+    margin-top: 14px;
   }
-  .session .meta { margin-top: 6px; font-size: 14px; color: var(--dust); font-weight: 500; letter-spacing: .04em; }
-  .session .meta b { color: var(--brass); font-weight: 600; }
+  .card .head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 
-  .startbtn {
-    margin-top: 22px; width: 100%; min-height: 74px;
-    border-radius: 17px; position: relative; overflow: hidden;
-    background: linear-gradient(180deg, #ff4a38 0%, #e8271f 42%, #b3140e 100%);
-    box-shadow:
-      inset 0 1px 0 rgba(255,255,255,.38),
-      inset 0 -2px 6px rgba(80,0,0,.5),
-      0 14px 40px rgba(232,39,31,.32);
-    display: flex; align-items: center; justify-content: center; gap: 16px;
-    color: #fff; font-size: 19px; letter-spacing: .34em; text-indent: .34em;
-    transition: transform .12s ease;
-  }
-  .startbtn:active { transform: scale(.98); }
-  .startbtn::after {
-    content: ""; position: absolute; inset: 0;
-    background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,.28) 50%, transparent 65%);
-    background-size: 260% 100%; background-position: 130% 0;
-    animation: metalloop 5.5s cubic-bezier(.4,0,.2,1) infinite 1s;
-  }
-  .startbtn svg { position: relative; }
+  /* entrance choreography — nothing appears instantly */
+  .in { opacity: 0; transform: translateY(18px); }
+  .live .in { animation: enterup .8s var(--ease) both; }
+  .live .in.d1 { animation-delay: .07s; } .live .in.d2 { animation-delay: .16s; }
+  .live .in.d3 { animation-delay: .26s; } .live .in.d4 { animation-delay: .38s; }
+  .live .in.d5 { animation-delay: .5s; }  .live .in.d6 { animation-delay: .62s; }
+  @keyframes enterup { to { opacity: 1; transform: translateY(0); } }
+  .leaving .in { animation: leave .38s ease both !important; }
+  @keyframes leave { to { opacity: 0; transform: translateY(-14px); } }
 
-  .divider {
-    margin: 42px 0 0; display: flex; align-items: center; gap: 18px;
-  }
-  .divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .greetrow { display: flex; align-items: baseline; justify-content: space-between; padding: 14px 2px 2px; }
+  .greetrow .g { font-size: 17px; font-weight: 600; letter-spacing: .01em; }
+  .greetrow .d { font-size: 11.5px; color: var(--t3); }
 
-  /* readiness — the machined instrument */
-  .ready-band { margin-top: 24px; display: flex; gap: 26px; align-items: center; }
-  .dial { position: relative; width: 152px; height: 152px; flex: none; }
-  .dial .disc {
-    position: absolute; inset: 0; border-radius: 50%;
-    background: radial-gradient(circle at 32% 26%, #2b2521 0%, #1a1512 45%, #0f0c0a 78%, #080606 100%);
-    box-shadow:
-      inset 0 2px 3px rgba(255,236,200,.12),
-      inset 0 -12px 26px rgba(0,0,0,.75),
-      0 18px 44px rgba(0,0,0,.6);
+  /* ---- The Corner (fighter) / Assistant (coach) ---- */
+  .corner-card { overflow: hidden; }
+  .corner-card::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,162,74,.55), transparent);
   }
-  .dial svg { position: absolute; inset: 0; }
-  .dial .arc { transition: stroke-dashoffset 1.6s cubic-bezier(.16,.84,.3,1); }
-  .dial .num {
-    position: absolute; inset: 0; display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
+  body[data-mode="coach"] .corner-card::before {
+    background: linear-gradient(90deg, transparent, rgba(111,150,180,.55), transparent);
   }
-  .dial .num .v { font-size: 44px; font-weight: 500; color: var(--bone); line-height: 1; font-variant-numeric: tabular-nums; }
-  .dial .num .k { margin-top: 5px; font-size: 8.5px; letter-spacing: .4em; text-indent: .4em; color: var(--brass); font-weight: 600; text-transform: uppercase; }
-  .gauges { flex: 1; min-width: 0; }
-  .g { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 11px 0; border-bottom: 1px solid var(--line); }
-  .g:last-child { border-bottom: 0; }
-  .g .k { font-size: 10px; letter-spacing: .26em; color: var(--faint); font-weight: 600; text-transform: uppercase; white-space: nowrap; }
-  .g .v { font-size: 15px; font-weight: 600; color: var(--bone); text-align: right; letter-spacing: .03em; }
-  .g .v em { font-style: normal; color: var(--brass); }
-
-  /* camp strip — 28 nights, engraved */
-  .camp { margin-top: 24px; }
-  .ticks { display: flex; gap: 5px; margin-top: 14px; }
-  .ticks i {
-    flex: 1; height: 26px; border-radius: 3px;
-    background: linear-gradient(180deg, #1c1713, #120e0b);
-    box-shadow: inset 0 1px 0 rgba(237,229,216,.05);
-  }
-  .ticks i.done { background: linear-gradient(180deg, var(--brass-hi), #9b7a2e); box-shadow: 0 0 10px rgba(201,162,74,.24); }
-  .ticks i.today { background: linear-gradient(180deg, var(--red-hi), #a8120c); animation: tickpulse 1.6s ease-in-out infinite; }
-  @keyframes tickpulse { 0%,100% { box-shadow: 0 0 6px rgba(232,39,31,.4);} 50% { box-shadow: 0 0 18px rgba(232,39,31,.85);} }
-  .camp .sub { margin-top: 10px; font-size: 12.5px; color: var(--faint); font-weight: 500; letter-spacing: .06em; }
-  .camp .sub b { color: var(--dust); }
-
-  /* the corner — coach bar, fixed */
-  .corner {
-    position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
-    background: linear-gradient(180deg, rgba(14,11,9,.6), rgba(10,8,7,.97) 30%);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid var(--line);
-    padding: 14px 22px calc(16px + env(safe-area-inset-bottom));
-    display: none;
-  }
-  #home.on ~ .corner, .corner.on { display: block; }
-  .corner .inner { max-width: 560px; margin: 0 auto; display: flex; align-items: center; gap: 16px; }
-  .wave { display: flex; align-items: center; gap: 3px; height: 30px; flex: none; }
-  .wave i { width: 3px; border-radius: 2px; background: linear-gradient(180deg, var(--brass-hi), var(--brass)); animation: wv 1.3s ease-in-out infinite; }
-  .wave i:nth-child(1){height:9px} .wave i:nth-child(2){height:19px;animation-delay:.12s}
-  .wave i:nth-child(3){height:27px;animation-delay:.24s} .wave i:nth-child(4){height:14px;animation-delay:.36s}
-  .wave i:nth-child(5){height:22px;animation-delay:.48s}
+  .wave { display: flex; align-items: center; gap: 3px; height: 22px; }
+  .wave i { width: 2.5px; border-radius: 2px; background: linear-gradient(180deg, var(--brass-hi), var(--brass)); animation: wv 1.3s ease-in-out infinite; }
+  body[data-mode="coach"] .wave i { background: linear-gradient(180deg, #b7cede, var(--accent)); }
+  .wave i:nth-child(1){height:7px} .wave i:nth-child(2){height:14px;animation-delay:.12s}
+  .wave i:nth-child(3){height:20px;animation-delay:.24s} .wave i:nth-child(4){height:11px;animation-delay:.36s}
+  .wave i:nth-child(5){height:16px;animation-delay:.48s}
   @keyframes wv { 0%,100% { transform: scaleY(.45);} 50% { transform: scaleY(1);} }
-  .corner .who { font-size: 10px; letter-spacing: .3em; color: var(--brass); font-weight: 600; text-transform: uppercase; }
-  .corner .say { margin-top: 3px; font-size: 14.5px; color: #d8cfc2; font-weight: 500; letter-spacing: .02em; min-height: 21px; }
+  .wave.idle i { animation-play-state: paused; transform: scaleY(.4); }
+  .corner-card .who { display: flex; align-items: center; gap: 12px; }
+  .corner-card .who .lbl { color: var(--brass); }
+  body[data-mode="coach"] .corner-card .who .lbl { color: var(--accent); }
+  .briefing { margin-top: 14px; display: flex; flex-direction: column; gap: 9px; min-height: 92px; }
+  .briefing .line {
+    font-size: 15.5px; line-height: 1.45; color: var(--t2); letter-spacing: .01em;
+    opacity: 0; transform: translateY(8px);
+    transition: opacity .7s ease, transform .7s var(--ease), color .4s;
+  }
+  .briefing .line.show { opacity: 1; transform: translateY(0); }
+  .briefing .line.key { color: var(--t1); font-weight: 600; }
+
+  /* ---- session / next objective ---- */
+  .sess .name { font-family: "Oswald"; font-weight: 600; font-size: 21px; letter-spacing: .04em; text-transform: uppercase; margin-top: 10px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .chip {
+    font-family: "Oswald"; font-weight: 500; font-size: 11.5px; letter-spacing: .1em;
+    color: var(--t2); text-transform: uppercase;
+    padding: 6px 12px; border-radius: 999px;
+    border: 1px solid var(--hair); background: rgba(0,0,0,.22);
+  }
+  .objective { display: flex; align-items: center; gap: 10px; margin-top: 16px; }
+  .objective i { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); flex: none; }
+  .objective span { font-size: 13.5px; color: var(--t2); }
+  .objective b { color: var(--t1); font-weight: 600; }
+
+  .primary {
+    margin-top: 18px; width: 100%; min-height: var(--tap);
+    border-radius: 15px; position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    background: linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.3), inset 0 -2px 5px rgba(0,0,0,.35), 0 12px 30px rgba(0,0,0,.4);
+    color: #fff; font-family: "Oswald"; font-weight: 600; font-size: 14px;
+    letter-spacing: .3em; text-indent: .3em; text-transform: uppercase;
+    transition: transform .12s ease, filter .3s;
+  }
+  .primary:active { transform: scale(.98); filter: brightness(1.08); }
+  .primary::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(105deg, transparent 38%, rgba(255,255,255,.2) 50%, transparent 62%);
+    background-size: 260% 100%; background-position: 135% 0;
+    animation: idlesheen 6s cubic-bezier(.4,0,.2,1) infinite 1.4s;
+  }
+  @keyframes idlesheen { 0%, 60%, 100% { background-position: 135% 0; } 26%, 36% { background-position: -35% 0; } }
+
+  /* ---- camp timeline ---- */
+  .timeline { margin-top: 18px; overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; }
+  .timeline::-webkit-scrollbar { display: none; }
+  .tl { display: flex; align-items: flex-start; min-width: max-content; padding: 6px 2px 0; }
+  .node { position: relative; width: 34px; flex: none; display: flex; flex-direction: column; align-items: center; }
+  .node .dot {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: #262019; border: 1px solid var(--hair-2);
+    position: relative; z-index: 1;
+  }
+  .node .bar { position: absolute; top: 4.5px; left: 50%; width: 34px; height: 1px; background: var(--hair-2); }
+  .node:last-child .bar { display: none; }
+  .node.done .dot { background: linear-gradient(145deg, var(--brass-hi), #9b7a2e); border-color: transparent; box-shadow: 0 0 8px rgba(201,162,74,.35); }
+  .node.done .bar { background: rgba(201,162,74,.4); }
+  .node.today .dot { background: var(--accent); border-color: transparent; animation: nodepulse 1.8s ease-in-out infinite; }
+  @keyframes nodepulse { 0%,100% { box-shadow: 0 0 5px var(--accent);} 50% { box-shadow: 0 0 16px var(--accent);} }
+  .node .wk { margin-top: 9px; font-family: "Oswald"; font-weight: 600; font-size: 8.5px; letter-spacing: .14em; color: var(--t3); text-transform: uppercase; height: 11px; }
+  .node.fight .dot { width: 13px; height: 13px; margin-top: -2px; background: var(--t1); box-shadow: 0 0 14px rgba(240,235,226,.5); }
+  .node.fight .wk { color: var(--t1); }
+
+  /* ---- progress: championship rounds ring + facts ---- */
+  .statrow { display: flex; gap: 14px; margin-top: 14px; }
+  .ringcard { flex: 1.1; display: flex; flex-direction: column; align-items: center; padding: 18px 14px 16px; }
+  .roundring { position: relative; width: 118px; height: 118px; margin-top: 12px; }
+  .roundring svg { position: absolute; inset: 0; transform: rotate(-90deg); }
+  .roundring .seg { transition: stroke .5s ease; }
+  .roundring .c { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .roundring .v { font-family: "Oswald"; font-weight: 600; font-size: 30px; line-height: 1; font-variant-numeric: tabular-nums; }
+  .roundring .k { margin-top: 4px; font-family: "Oswald"; font-weight: 600; font-size: 8px; letter-spacing: .3em; text-indent: .3em; color: var(--t3); text-transform: uppercase; }
+  .ringcard .foot { margin-top: 12px; font-size: 11.5px; color: var(--t3); }
+  .ringcard .foot b { color: var(--brass); font-weight: 600; }
+  .facts { flex: 1; display: flex; flex-direction: column; gap: 14px; }
+  .fact { flex: 1; padding: 16px 18px; display: flex; flex-direction: column; justify-content: center; }
+  .fact .v { font-family: "Oswald"; font-weight: 600; font-size: 22px; letter-spacing: .02em; }
+  .fact .v em { font-style: normal; font-size: 12px; color: var(--t2); margin-left: 4px; font-weight: 500; }
+  .fact .k { margin-top: 4px; }
+
+  /* ---- coach mode pieces ---- */
+  .rows { margin-top: 6px; }
+  .row {
+    display: flex; align-items: center; gap: 14px;
+    padding: 13px 2px; border-bottom: 1px solid var(--hair);
+  }
+  .row:last-child { border-bottom: 0; }
+  .row .when { font-family: "Oswald"; font-weight: 600; font-size: 13px; color: var(--t2); width: 46px; flex: none; font-variant-numeric: tabular-nums; }
+  .ava {
+    width: 38px; height: 38px; border-radius: 50%; flex: none;
+    display: grid; place-items: center;
+    background: linear-gradient(145deg, #262019, #14110f);
+    border: 1px solid var(--hair-2);
+    font-family: "Oswald"; font-weight: 600; font-size: 12px; letter-spacing: .06em; color: var(--t2);
+  }
+  .row .info { flex: 1; min-width: 0; }
+  .row .n { font-size: 14.5px; font-weight: 600; }
+  .row .s { font-size: 12px; color: var(--t3); margin-top: 2px; }
+  .tag {
+    font-family: "Oswald"; font-weight: 600; font-size: 9.5px; letter-spacing: .18em;
+    text-transform: uppercase; padding: 5px 10px; border-radius: 999px; flex: none;
+  }
+  .tag.ready { color: var(--brass-hi); border: 1px solid rgba(201,162,74,.4); background: rgba(201,162,74,.08); }
+  .tag.live { color: #d9e6f0; border: 1px solid rgba(111,150,180,.45); background: rgba(111,150,180,.1); }
+  .arrow { color: var(--t3); flex: none; }
+
+  /* ---- mode switch overlay ---- */
+  #modeOverlay {
+    position: fixed; inset: 0; z-index: 95; display: none;
+    background: rgba(6,5,4,.75); backdrop-filter: blur(14px);
+    align-items: center; justify-content: center; padding: 26px;
+  }
+  #modeOverlay.on { display: flex; }
+  .modes { width: 100%; max-width: 420px; }
+  .modes .lbl { text-align: center; display: block; }
+  .modecard {
+    width: 100%; text-align: left; margin-top: 14px; padding: 22px;
+    border-radius: 20px; border: 1px solid var(--hair);
+    background: linear-gradient(165deg, var(--sf2), var(--sf1));
+    box-shadow: inset 0 1px 0 rgba(240,235,226,.07), 0 22px 50px rgba(0,0,0,.5);
+    display: flex; align-items: center; gap: 18px;
+    transition: transform .14s ease, border-color .3s;
+    opacity: 0; transform: translateY(16px);
+  }
+  #modeOverlay.on .modecard { animation: enterup .6s var(--ease) both; }
+  #modeOverlay.on .modecard:nth-child(3) { animation-delay: .1s; }
+  .modecard:active { transform: scale(.98); }
+  .modecard.current { border-color: var(--hair-2); }
+  .modecard .ic {
+    width: 52px; height: 52px; border-radius: 16px; flex: none;
+    display: grid; place-items: center;
+    background: rgba(0,0,0,.3); border: 1px solid var(--hair);
+  }
+  .modecard .t { font-family: "Oswald"; font-weight: 600; font-size: 16px; letter-spacing: .14em; text-transform: uppercase; }
+  .modecard .d { font-size: 12.5px; color: var(--t3); margin-top: 4px; line-height: 1.4; }
+  .modecard .now { margin-left: auto; }
 
   /* ================================================================
-     VIEW 3 — TRAINING (THE GYM)
-     The bag under the lamp. The ring of the round. Nothing else.
+     PRE-SESSION BRIEFING + TRAINING (fighter)
      ================================================================ */
-  #training {
-    position: fixed; inset: 0; z-index: 80; display: none;
-    background: #040303; overflow: hidden;
+  #briefOverlay {
+    position: fixed; inset: 0; z-index: 96; display: none;
+    background: rgba(4,3,3,.9); backdrop-filter: blur(10px);
+    align-items: center; justify-content: center; padding: 30px;
   }
+  #briefOverlay.on { display: flex; }
+  #briefOverlay .bwrap { max-width: 420px; width: 100%; text-align: left; }
+  #briefOverlay .who { display: flex; align-items: center; gap: 12px; }
+  #briefOverlay .who .lbl { color: var(--brass); }
+  #briefOverlay .blines { margin-top: 22px; display: flex; flex-direction: column; gap: 13px; }
+  #briefOverlay .bline {
+    font-family: "Oswald"; font-weight: 500; font-size: 19px; letter-spacing: .06em; color: var(--t2);
+    opacity: 0; transform: translateY(10px);
+    transition: opacity .6s ease, transform .6s var(--ease);
+  }
+  #briefOverlay .bline.show { opacity: 1; transform: translateY(0); }
+  #briefOverlay .bline.key { color: var(--t1); font-weight: 600; }
+
+  #training { position: fixed; inset: 0; z-index: 94; display: none; background: #040303; overflow: hidden; }
   #training.on { display: block; }
   #training .lamp { opacity: 1; animation: lampsway 9s ease-in-out infinite; }
-  #training .bagwrap {
-    position: absolute; left: 50%; top: 51%; transform: translate(-50%,-50%);
-    width: min(64vw, 300px); opacity: .92;
-  }
+  #training .bagwrap { position: absolute; left: 50%; top: 51%; transform: translate(-50%,-50%); width: min(62vw, 290px); opacity: .92; }
   .bag { transform-origin: 50% 0%; animation: sway 6.5s ease-in-out infinite; display: block; width: 100%; }
   @keyframes sway { 0%,100% { transform: rotate(-.9deg);} 50% { transform: rotate(.9deg);} }
-  #training .floorlight {
-    position: absolute; left: 50%; bottom: 6%; transform: translateX(-50%);
-    width: 78%; height: 10%;
-    background: radial-gradient(50% 100% at 50% 40%, rgba(255,222,160,.12), transparent 70%);
-  }
-  #training .veil { position: absolute; inset: 0; background: rgba(3,2,2,.42); transition: background .6s ease; }
-  #training.rest .veil { background: rgba(3,2,2,.62); }
+  #training .floorlight { position: absolute; left: 50%; bottom: 6%; transform: translateX(-50%); width: 78%; height: 10%;
+    background: radial-gradient(50% 100% at 50% 40%, rgba(255,222,160,.11), transparent 70%); }
+  #training .veil { position: absolute; inset: 0; background: rgba(3,2,2,.44); transition: background .6s ease; }
+  #training.rest .veil { background: rgba(3,2,2,.64); }
   #training.warn10 .veil { animation: warnpulse 1s ease-in-out infinite; }
-  @keyframes warnpulse {
-    0%,100% { background: rgba(3,2,2,.42); }
-    50% { background: rgba(70,4,2,.5); }
-  }
-
-  #training .hud {
-    position: absolute; inset: 0; display: flex; flex-direction: column;
-    align-items: center; padding: max(22px, env(safe-area-inset-top)) 22px calc(24px + env(safe-area-inset-bottom));
-  }
-  .hud .roundlbl { margin-top: 4px; font-size: 12px; letter-spacing: .44em; text-indent: .44em; color: var(--dust); font-weight: 600; text-transform: uppercase; }
-  .hud .phase { margin-top: 6px; font-size: clamp(20px,5.5vw,26px); letter-spacing: .3em; text-indent: .3em; }
-  .hud .phase.work { color: var(--red-hi); text-shadow: 0 0 24px rgba(232,39,31,.55); }
-  .hud .phase.rest { color: var(--brass-hi); text-shadow: 0 0 24px rgba(201,162,74,.5); }
-
-  .ring { position: relative; width: min(72vw,300px); aspect-ratio: 1; margin-top: 4vh; }
+  @keyframes warnpulse { 0%,100% { background: rgba(3,2,2,.44);} 50% { background: rgba(64,6,3,.5);} }
+  #training .hud { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center;
+    padding: max(22px, env(safe-area-inset-top)) 22px calc(22px + env(safe-area-inset-bottom)); }
+  .hud .roundlbl { margin-top: 2px; font-family: "Oswald"; font-weight: 600; font-size: 11px; letter-spacing: .42em; text-indent: .42em; color: var(--t2); text-transform: uppercase; }
+  .hud .phase { margin-top: 6px; font-size: 21px; letter-spacing: .3em; text-indent: .3em; }
+  .hud .phase.work { color: #ff6a58; text-shadow: 0 0 22px rgba(224,62,52,.55); }
+  .hud .phase.rest { color: var(--brass-hi); text-shadow: 0 0 22px rgba(201,162,74,.5); }
+  .ring { position: relative; width: min(68vw,280px); aspect-ratio: 1; margin-top: 4vh; }
   .ring svg { position: absolute; inset: 0; transform: rotate(-90deg); }
-  .ring .t {
-    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-    font-size: clamp(64px, 19vw, 88px); font-weight: 600; color: var(--bone);
-    font-variant-numeric: tabular-nums; letter-spacing: .04em;
-    text-shadow: 0 4px 30px rgba(0,0,0,.8);
-  }
-  #training.warn10 .ring .t { color: var(--red-hi); }
-
-  .coachline {
-    margin-top: auto; margin-bottom: 18px; min-height: 58px;
-    display: flex; align-items: center; gap: 14px; max-width: 480px;
-    opacity: 0; transform: translateY(14px);
-    transition: opacity .5s ease, transform .5s cubic-bezier(.16,.84,.3,1);
-  }
+  .ring .t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-family: "Oswald"; font-weight: 600; font-size: clamp(56px, 17vw, 76px); color: var(--t1);
+    font-variant-numeric: tabular-nums; letter-spacing: .04em; text-shadow: 0 4px 28px rgba(0,0,0,.85); }
+  #training.warn10 .ring .t { color: #ff6a58; }
+  .coachline { margin-top: auto; margin-bottom: 16px; min-height: 54px; display: flex; align-items: center; gap: 13px; max-width: 480px;
+    opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s var(--ease); }
   .coachline.show { opacity: 1; transform: translateY(0); }
-  .coachline .txt { font-size: clamp(17px,4.6vw,21px); letter-spacing: .12em; text-transform: uppercase; color: var(--brass-hi); font-weight: 600; text-shadow: 0 2px 18px rgba(0,0,0,.9); }
-
-  .controls { display: flex; gap: 14px; width: 100%; max-width: 480px; }
-  .ctl {
-    flex: 1; min-height: var(--tap); border-radius: 15px;
-    border: 1px solid var(--line);
-    background: linear-gradient(180deg, rgba(28,22,18,.9), rgba(14,11,9,.9));
-    box-shadow: inset 0 1px 0 rgba(237,229,216,.08);
-    font-size: 13px; letter-spacing: .3em; text-indent: .3em; font-weight: 600;
-    text-transform: uppercase; color: var(--dust);
-    display: flex; align-items: center; justify-content: center; gap: 10px;
-  }
-  .ctl.primary { color: var(--bone); }
+  .coachline .txt { font-family: "Oswald"; font-weight: 600; font-size: clamp(16px,4.4vw,20px); letter-spacing: .12em; text-transform: uppercase; color: var(--brass-hi); text-shadow: 0 2px 16px rgba(0,0,0,.9); }
+  .controls { display: flex; gap: 12px; width: 100%; max-width: 480px; }
+  .ctl { flex: 1; min-height: var(--tap); border-radius: 14px; border: 1px solid var(--hair);
+    background: linear-gradient(180deg, rgba(30,24,20,.92), rgba(16,13,11,.92));
+    box-shadow: inset 0 1px 0 rgba(240,235,226,.07);
+    font-family: "Oswald"; font-weight: 600; font-size: 12px; letter-spacing: .28em; text-indent: .28em;
+    text-transform: uppercase; color: var(--t2);
+    display: flex; align-items: center; justify-content: center; }
+  .ctl.go { color: var(--t1); }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
     .grain { display: none; }
+    .in, .briefing .line, .bline, .modecard { opacity: 1 !important; transform: none !important; }
   }
 </style>
 </head>
-<body>
+<body data-mode="fighter">
 
+<div class="roomlight" aria-hidden="true"></div>
 <div class="grain" aria-hidden="true"></div>
 
 <!-- ============ OPENING ============ -->
@@ -459,86 +490,200 @@
   <button class="skip" id="skipBtn">Skip</button>
 </div>
 
-<!-- ============ HOME ============ -->
-<main id="home">
+<!-- ============ WORKSPACE ============ -->
+<main id="app">
   <div class="shell">
-    <header class="top rise">
-      <div class="brand">
-        <div class="mark" role="img" aria-label="DP"><div class="shine"></div></div>
-        <div class="campday" id="campday">Camp · Night 12 of 28</div>
+    <header class="top in">
+      <div class="mark" role="img" aria-label="DP"><div class="shine"></div></div>
+      <div class="ctx">
+        <div class="l1" id="ctxTitle">Fight Camp</div>
+        <div class="l2" id="ctxSub">Night 12 of 28 · 16 to fight night</div>
       </div>
+      <button class="modechip" id="modeBtn" aria-label="Switch mode"><i></i><span id="modeName">Fighter</span></button>
       <button class="iconbtn" id="soundToggle" aria-pressed="true" aria-label="Sound on. Tap to mute.">
-        <svg id="bellIco" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-          <path d="M10 2.2c-3 0-5 2.3-5 5.2v3.4L3.4 13.4c-.3.5 0 1.1.6 1.1h12c.6 0 .9-.6.6-1.1L15 10.8V7.4c0-2.9-2-5.2-5-5.2z" stroke="#c9a24a" stroke-width="1.5" fill="rgba(201,162,74,.12)"/>
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M10 2.2c-3 0-5 2.3-5 5.2v3.4L3.4 13.4c-.3.5 0 1.1.6 1.1h12c.6 0 .9-.6.6-1.1L15 10.8V7.4c0-2.9-2-5.2-5-5.2z" stroke="#c9a24a" stroke-width="1.5" fill="rgba(201,162,74,.1)"/>
           <path d="M8.2 16.4a1.9 1.9 0 0 0 3.6 0" stroke="#c9a24a" stroke-width="1.5" stroke-linecap="round"/>
-          <line id="bellMute" x1="3.5" y1="3.5" x2="16.5" y2="16.5" stroke="#e8271f" stroke-width="1.8" stroke-linecap="round" visibility="hidden"/>
+          <line id="bellMute" x1="3.5" y1="3.5" x2="16.5" y2="16.5" stroke="#e03e34" stroke-width="1.8" stroke-linecap="round" visibility="hidden"/>
         </svg>
       </button>
     </header>
 
-    <section class="hero">
-      <div class="greet rise d1" id="greet">Good evening, Gbolahan.</div>
-      <h1 class="headline anton rise d2">
-        <span class="metal">Ready</span>
-        <span class="l2"><span class="metal">to</span> <span class="metal-red" id="hlWord">train?</span></span>
-      </h1>
-      <div class="rule rise d2"></div>
-    </section>
-
-    <section class="session rise d3">
-      <div class="label">Tonight's session</div>
-      <h2 class="name anton" id="sessName">Southpaw Counters</h2>
-      <div class="meta" id="sessMeta"><b>6 rounds</b> · 3:00 work / 1:00 rest · focus: check hook</div>
-      <button class="startbtn anton" id="startBtn">
-        <svg width="15" height="17" viewBox="0 0 15 17" fill="none" aria-hidden="true"><path d="M1.5 1.8v13.4L13.5 8.5 1.5 1.8z" fill="#fff"/></svg>
-        Start
-      </button>
-    </section>
-
-    <div class="divider rise d4"><span class="label">Fight camp</span></div>
-
-    <section class="ready-band rise d4">
-      <div class="dial">
-        <div class="disc"></div>
-        <svg viewBox="0 0 152 152" aria-hidden="true">
-          <g stroke="rgba(214,182,130,.22)" stroke-width="1">
-            <line x1="76" y1="7" x2="76" y2="14"/><line x1="145" y1="76" x2="138" y2="76"/>
-            <line x1="7" y1="76" x2="14" y2="76"/><line x1="27" y1="27" x2="32" y2="32"/>
-            <line x1="125" y1="27" x2="120" y2="32"/><line x1="27" y1="125" x2="32" y2="120"/>
-            <line x1="125" y1="125" x2="120" y2="120"/>
-          </g>
-          <circle cx="76" cy="76" r="63" fill="none" stroke="rgba(214,182,130,.12)" stroke-width="5"/>
-          <circle class="arc" id="readyArc" cx="76" cy="76" r="63" fill="none" stroke="url(#brassg)" stroke-width="5"
-            stroke-linecap="round" stroke-dasharray="395.8" stroke-dashoffset="395.8" transform="rotate(-90 76 76)"/>
-          <defs>
-            <linearGradient id="brassg" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#ecd28c"/><stop offset="1" stop-color="#9b7a2e"/>
-            </linearGradient>
-          </defs>
-        </svg>
-        <div class="num"><div class="v" id="readyNum">0</div><div class="k">Readiness</div></div>
+    <!-- ================= FIGHTER MODE ================= -->
+    <div id="fighterHome">
+      <div class="greetrow in d1">
+        <span class="g" id="greet">Good evening, Gbolahan</span>
+        <span class="d" id="dateStr"></span>
       </div>
-      <div class="gauges">
-        <div class="g"><span class="k">Streak</span><span class="v">4 <em>nights</em></span></div>
-        <div class="g"><span class="k">Fight IQ</span><span class="v">72</span></div>
-        <div class="g"><span class="k">Last score</span><span class="v">86 <em>· sharp</em></span></div>
-      </div>
-    </section>
 
-    <section class="camp rise d5">
-      <div class="ticks" id="ticks" aria-label="Camp progress: 12 of 28 nights"></div>
-      <div class="sub"><b>16 nights</b> to fight night · current goal: <b>sharper counters off the back foot</b></div>
-    </section>
+      <section class="card corner-card in d2">
+        <div class="who">
+          <div class="wave" id="cornerWave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <span class="lbl">The Corner</span>
+        </div>
+        <div class="briefing" id="briefingHome">
+          <div class="line">Tonight we're preparing for a tall southpaw.</div>
+          <div class="line">Focus on cutting the ring. Stay behind the jab.</div>
+          <div class="line key">Your goal is to win every exchange.</div>
+        </div>
+      </section>
+
+      <section class="card sess in d3">
+        <div class="head">
+          <span class="lbl">Next Session</span>
+          <span class="lbl" style="color:var(--t2)">Tonight · 8 PM</span>
+        </div>
+        <h2 class="name">Southpaw Counters</h2>
+        <div class="chips">
+          <span class="chip">6 rounds</span><span class="chip">3:00 / 1:00</span><span class="chip">Focus · check hook</span>
+        </div>
+        <div class="objective"><i></i><span>Next objective — <b>sharper counters off the back foot</b></span></div>
+        <button class="primary" id="startBtn">
+          <svg width="12" height="14" viewBox="0 0 15 17" fill="none" aria-hidden="true"><path d="M1.5 1.8v13.4L13.5 8.5 1.5 1.8z" fill="#fff"/></svg>
+          Begin Training
+        </button>
+      </section>
+
+      <section class="card in d4">
+        <div class="head">
+          <span class="lbl">Fight Camp</span>
+          <span class="lbl" style="color:var(--t2)">vs. tall southpaw</span>
+        </div>
+        <div class="timeline"><div class="tl" id="tl"></div></div>
+      </section>
+
+      <div class="statrow in d5">
+        <section class="card ringcard" style="margin-top:0">
+          <span class="lbl">Camp Rounds</span>
+          <div class="roundring">
+            <svg viewBox="0 0 118 118" id="roundringSvg" aria-hidden="true"></svg>
+            <div class="c"><div class="v" id="ringNum">0</div><div class="k">of 12 won</div></div>
+          </div>
+          <div class="foot">Each ring fills like a <b>championship round</b></div>
+        </section>
+        <div class="facts">
+          <section class="card fact" style="margin-top:0">
+            <div class="v">86 <em>sharp</em></div>
+            <div class="k lbl">Last Session</div>
+          </section>
+          <section class="card fact" style="margin-top:0">
+            <div class="v">4 <em>nights</em></div>
+            <div class="k lbl">Streak</div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= COACH MODE ================= -->
+    <div id="coachHome" hidden>
+      <div class="greetrow in d1">
+        <span class="g">Evening, Coach</span>
+        <span class="d" id="dateStr2"></span>
+      </div>
+
+      <section class="card corner-card in d2">
+        <div class="who">
+          <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <span class="lbl">Assistant</span>
+        </div>
+        <div class="briefing" id="briefingCoach">
+          <div class="line">Three athletes on tonight's schedule.</div>
+          <div class="line">Amara's sparring review is ready — footwork flagged.</div>
+          <div class="line key">Dan needs a lighter session. He's carried four hard nights.</div>
+        </div>
+      </section>
+
+      <section class="card in d3">
+        <div class="head">
+          <span class="lbl">Tonight</span>
+          <span class="lbl" style="color:var(--t2)">3 sessions</span>
+        </div>
+        <div class="rows">
+          <div class="row">
+            <span class="when">18:00</span>
+            <span class="ava">AO</span>
+            <div class="info"><div class="n">Amara Osei</div><div class="s">Pads · counters off the jab</div></div>
+            <svg class="arrow" width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <div class="row">
+            <span class="when">19:00</span>
+            <span class="ava">DR</span>
+            <div class="info"><div class="n">Dan Reyes</div><div class="s">Conditioning · recovery emphasis</div></div>
+            <span class="tag live">Adjusted</span>
+          </div>
+          <div class="row">
+            <span class="when">20:30</span>
+            <span class="ava">SK</span>
+            <div class="info"><div class="n">Sam Kade</div><div class="s">Sparring review · 6 rounds of film</div></div>
+            <svg class="arrow" width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <button class="primary" id="planBtn">
+          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1v12M1 7h12" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+          Plan Session
+        </button>
+      </section>
+
+      <section class="card in d4">
+        <div class="head">
+          <span class="lbl">Review Queue</span>
+          <span class="lbl" style="color:var(--t2)">2 waiting</span>
+        </div>
+        <div class="rows">
+          <div class="row">
+            <span class="ava">AO</span>
+            <div class="info"><div class="n">Sparring · Tuesday</div><div class="s">AI notes ready · footwork, guard drops</div></div>
+            <span class="tag ready">AI Notes</span>
+          </div>
+          <div class="row">
+            <span class="ava">SK</span>
+            <div class="info"><div class="n">Bag work · Monday</div><div class="s">Processing timeline…</div></div>
+            <span class="tag live">72%</span>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 </main>
 
-<!-- the corner: the coach is always within reach -->
-<div class="corner" id="corner">
-  <div class="inner">
-    <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-    <div>
-      <div class="who">The Corner</div>
-      <div class="say" id="coachSay"></div>
+<!-- mode switcher -->
+<div id="modeOverlay" role="dialog" aria-label="Choose workspace">
+  <div class="modes">
+    <span class="lbl">Choose your workspace</span>
+    <button class="modecard" data-mode="fighter">
+      <span class="ic">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <path d="M8 4.5h8.5A4.5 4.5 0 0 1 21 9v4a6 6 0 0 1-6 6H9a4 4 0 0 1-4-4V7.5a3 3 0 0 1 3-3z" stroke="#e03e34" stroke-width="1.6" fill="rgba(224,62,52,.08)"/>
+          <path d="M5 12h6a3 3 0 0 1 3 3v4" stroke="#e03e34" stroke-width="1.6"/>
+        </svg>
+      </span>
+      <span><span class="t">Fighter</span><span class="d" style="display:block">Your camp, your corner, your rounds.</span></span>
+      <span class="lbl now" data-now></span>
+    </button>
+    <button class="modecard" data-mode="coach">
+      <span class="ic">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <rect x="5" y="4" width="16" height="18" rx="3" stroke="#6f96b4" stroke-width="1.6" fill="rgba(111,150,180,.08)"/>
+          <path d="M9 9.5h8M9 13.5h8M9 17.5h4" stroke="#6f96b4" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span><span class="t">Coach</span><span class="d" style="display:block">Your athletes, your sessions, your gym.</span></span>
+      <span class="lbl now" data-now></span>
+    </button>
+  </div>
+</div>
+
+<!-- pre-session briefing -->
+<div id="briefOverlay" role="dialog" aria-label="Session briefing">
+  <div class="bwrap">
+    <div class="who">
+      <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      <span class="lbl">The Corner</span>
+    </div>
+    <div class="blines">
+      <div class="bline">Tall southpaw. Six rounds.</div>
+      <div class="bline">Cut the ring. Stay behind the jab.</div>
+      <div class="bline key">Win every exchange.</div>
     </div>
   </div>
 </div>
@@ -547,32 +692,26 @@
 <div id="training" aria-label="Training session">
   <div class="lamp" aria-hidden="true"></div>
   <div class="bagwrap" aria-hidden="true">
-    <!-- the heavy bag: leather under tungsten -->
     <svg class="bag" viewBox="0 0 220 430" fill="none">
       <defs>
         <linearGradient id="leather" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stop-color="#0d0705"/>
-          <stop offset=".22" stop-color="#2a130d"/>
-          <stop offset=".45" stop-color="#5c2b1c"/>
-          <stop offset=".54" stop-color="#7c3f28"/>
-          <stop offset=".60" stop-color="#5c2b1c"/>
-          <stop offset=".82" stop-color="#200e09"/>
+          <stop offset="0" stop-color="#0d0705"/><stop offset=".22" stop-color="#2a130d"/>
+          <stop offset=".45" stop-color="#5c2b1c"/><stop offset=".54" stop-color="#7c3f28"/>
+          <stop offset=".60" stop-color="#5c2b1c"/><stop offset=".82" stop-color="#200e09"/>
           <stop offset="1" stop-color="#080403"/>
         </linearGradient>
         <linearGradient id="cuff" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0" stop-color="#0a0806"/><stop offset=".5" stop-color="#2e2620"/><stop offset="1" stop-color="#070505"/>
         </linearGradient>
         <linearGradient id="spec" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="rgba(255,226,170,.34)"/><stop offset=".65" stop-color="rgba(255,226,170,.10)"/><stop offset="1" stop-color="rgba(255,226,170,0)"/>
+          <stop offset="0" stop-color="rgba(255,226,170,.32)"/><stop offset=".65" stop-color="rgba(255,226,170,.1)"/><stop offset="1" stop-color="rgba(255,226,170,0)"/>
         </linearGradient>
         <radialGradient id="topsheen" cx=".5" cy=".35" r=".75">
-          <stop offset="0" stop-color="rgba(255,232,190,.20)"/><stop offset="1" stop-color="rgba(255,232,190,0)"/>
+          <stop offset="0" stop-color="rgba(255,232,190,.2)"/><stop offset="1" stop-color="rgba(255,232,190,0)"/>
         </radialGradient>
       </defs>
-      <!-- chains -->
       <g stroke="#6d6257" stroke-width="2.4" opacity=".85">
-        <path d="M110 6 v18"/>
-        <path d="M110 30 L74 66 M110 30 L146 66 M110 30 L110 68"/>
+        <path d="M110 6 v18"/><path d="M110 30 L74 66 M110 30 L146 66 M110 30 L110 68"/>
       </g>
       <g fill="none" stroke="#8d8071" stroke-width="2">
         <ellipse cx="110" cy="14" rx="4.5" ry="6.5"/><ellipse cx="110" cy="26" rx="6.5" ry="4.5"/>
@@ -580,31 +719,23 @@
         <ellipse cx="128" cy="48" rx="4" ry="5.5" transform="rotate(-45 128 48)"/>
         <ellipse cx="110" cy="50" rx="4" ry="5.5"/>
       </g>
-      <!-- top cuff -->
       <path d="M70 66 Q110 54 150 66 L152 96 Q110 106 68 96 Z" fill="url(#cuff)"/>
       <ellipse cx="110" cy="66" rx="40" ry="9" fill="#3a312a"/>
       <ellipse cx="110" cy="66" rx="40" ry="9" fill="url(#topsheen)"/>
-      <!-- straps -->
       <g fill="#171009" opacity=".9">
         <rect x="76" y="70" width="10" height="52" rx="3"/><rect x="134" y="70" width="10" height="52" rx="3"/>
         <rect x="105" y="74" width="10" height="52" rx="3"/>
       </g>
-      <!-- body -->
       <rect x="58" y="88" width="104" height="300" rx="46" fill="url(#leather)"/>
-      <!-- vertical seams + stitching -->
       <path d="M92 96 v286" stroke="rgba(0,0,0,.5)" stroke-width="2"/>
       <path d="M92 96 v286" stroke="rgba(255,210,160,.16)" stroke-width="1" stroke-dasharray="3 4"/>
       <path d="M128 96 v286" stroke="rgba(0,0,0,.5)" stroke-width="2"/>
       <path d="M128 96 v286" stroke="rgba(255,210,160,.16)" stroke-width="1" stroke-dasharray="3 4"/>
-      <!-- worn patches -->
       <ellipse cx="112" cy="210" rx="34" ry="52" fill="rgba(255,214,160,.05)"/>
       <ellipse cx="106" cy="290" rx="26" ry="34" fill="rgba(0,0,0,.25)"/>
-      <!-- specular streak from the lamp -->
       <rect x="104" y="92" width="14" height="290" rx="7" fill="url(#spec)"/>
-      <!-- bottom cap -->
       <ellipse cx="110" cy="388" rx="52" ry="13" fill="#0a0605"/>
       <path d="M58 370 Q110 396 162 370 L162 380 Q110 404 58 380 Z" fill="rgba(0,0,0,.55)"/>
-      <!-- contact shadow -->
       <ellipse cx="110" cy="416" rx="64" ry="9" fill="rgba(0,0,0,.7)"/>
     </svg>
   </div>
@@ -615,12 +746,12 @@
     <div class="phase anton work" id="phaseLbl">Work</div>
     <div class="ring">
       <svg viewBox="0 0 300 300" aria-hidden="true">
-        <circle cx="150" cy="150" r="138" fill="none" stroke="rgba(214,182,130,.14)" stroke-width="6"/>
+        <circle cx="150" cy="150" r="138" fill="none" stroke="rgba(235,220,195,.13)" stroke-width="6"/>
         <circle id="ringArc" cx="150" cy="150" r="138" fill="none" stroke="url(#ringg)" stroke-width="6"
           stroke-linecap="round" stroke-dasharray="867.1" stroke-dashoffset="0"/>
         <defs>
           <linearGradient id="ringg" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#ff5a45"/><stop offset="1" stop-color="#b3140e"/>
+            <stop offset="0" stop-color="#ff6a58"/><stop offset="1" stop-color="#a8221a"/>
           </linearGradient>
         </defs>
       </svg>
@@ -632,7 +763,7 @@
     </div>
     <div class="controls">
       <button class="ctl" id="endBtn">End</button>
-      <button class="ctl primary" id="pauseBtn">Pause</button>
+      <button class="ctl go" id="pauseBtn">Pause</button>
     </div>
   </div>
 </div>
@@ -647,7 +778,7 @@
   };
   var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---------------- sound: ringside, synthesized ---------------- */
+  /* ---------------- sound + haptics ---------------- */
   var soundOn = store.get("dp_sound", "on") === "on";
   var actx = null;
   function audio() {
@@ -657,8 +788,7 @@
   }
   function bell(strikes) {
     var ctx = audio(); if (!ctx || !soundOn) return;
-    strikes = strikes || 1;
-    for (var s = 0; s < strikes; s++) {
+    for (var s = 0; s < (strikes || 1); s++) {
       var t = ctx.currentTime + s * 0.32;
       [[523,1],[1244,.6],[1683,.38],[2137,.22],[2903,.12]].forEach(function (p) {
         var o = ctx.createOscillator(), g = ctx.createGain();
@@ -666,8 +796,7 @@
         g.gain.setValueAtTime(0.0001, t);
         g.gain.exponentialRampToValueAtTime(p[1] * 0.4, t + 0.008);
         g.gain.exponentialRampToValueAtTime(0.0001, t + 2.1);
-        o.connect(g); g.connect(ctx.destination);
-        o.start(t); o.stop(t + 2.2);
+        o.connect(g); g.connect(ctx.destination); o.start(t); o.stop(t + 2.2);
       });
     }
     haptic([60, 60, 60]);
@@ -690,7 +819,7 @@
     src.connect(lp); lp.connect(ng); ng.connect(ctx.destination); src.start(t);
     haptic(40);
   }
-  function clack() { /* 10-second warning: wood on canvas, twice */
+  function clack() {
     var ctx = audio(); if (!ctx || !soundOn) return;
     for (var s = 0; s < 2; s++) {
       var t = ctx.currentTime + s * 0.18;
@@ -703,9 +832,20 @@
     }
     haptic([30, 80, 30]);
   }
+  function tickSound() { /* soft switch click for UI */
+    var ctx = audio(); if (!ctx || !soundOn) return;
+    var t = ctx.currentTime;
+    var len = Math.floor(ctx.sampleRate * 0.02), buf = ctx.createBuffer(1, len, ctx.sampleRate), d = buf.getChannelData(0);
+    for (var i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 3);
+    var src = ctx.createBufferSource(); src.buffer = buf;
+    var bp = ctx.createBiquadFilter(); bp.type = "bandpass"; bp.frequency.value = 3600; bp.Q.value = 3;
+    var g = ctx.createGain(); g.gain.value = 0.18;
+    src.connect(bp); bp.connect(g); g.connect(ctx.destination); src.start(t);
+    haptic(12);
+  }
   function haptic(p) { try { if (navigator.vibrate) navigator.vibrate(p); } catch (e) {} }
 
-  /* ---------------- dust in the lamp cone ---------------- */
+  /* ---------------- dust ---------------- */
   var dustCanvas = document.getElementById("dust"), dustRAF = 0;
   function startDust() {
     if (reduced) return;
@@ -737,16 +877,15 @@
 
   /* ---------------- the opening ---------------- */
   var opening = document.getElementById("opening");
-  var home = document.getElementById("home");
-  var corner = document.getElementById("corner");
+  var app = document.getElementById("app");
   var timers = [];
   function at(ms, fn) { timers.push(setTimeout(fn, ms)); }
 
   function runOpening() {
     startDust();
-    at(900,  function () { opening.classList.add("lit"); });               // the lamp fights on
-    at(2500, function () { opening.classList.add("steady", "sweep"); });   // beam crosses the metal
-    at(3300, function () { opening.classList.add("hit"); });               // the sign settles hard
+    at(900,  function () { opening.classList.add("lit"); });
+    at(2500, function () { opening.classList.add("steady", "sweep"); });
+    at(3300, function () { opening.classList.add("hit"); });
     at(5300, function () { opening.classList.add("ready"); });
   }
   function enterCamp(withBell) {
@@ -754,77 +893,143 @@
     opening.classList.add("done", "lit", "steady", "sweep");
     stopDust();
     if (withBell) { bell(1); at(80, impact); }
-    showHome();
+    showApp();
     setTimeout(function () { opening.remove(); }, 1200);
   }
   document.getElementById("enterBtn").addEventListener("click", function () { enterCamp(true); });
   document.getElementById("skipBtn").addEventListener("click", function () { enterCamp(false); });
   if (reduced) enterCamp(false); else runOpening();
 
-  /* ---------------- home ---------------- */
-  var CAMP_DAY = 12, CAMP_LEN = 28, READINESS = 87;
+  /* ---------------- workspace + modes ---------------- */
+  var mode = store.get("dp_mode", "fighter");
+  var fighterHome = document.getElementById("fighterHome");
+  var coachHome = document.getElementById("coachHome");
+  var ctxTitle = document.getElementById("ctxTitle");
+  var ctxSub = document.getElementById("ctxSub");
+  var modeName = document.getElementById("modeName");
+  var briefTimers = [];
 
-  function showHome() {
-    home.classList.add("on");
-    corner.classList.add("on");
-    requestAnimationFrame(function () { home.classList.add("in"); });
-    // readiness dial powers up
-    setTimeout(function () {
-      var arc = document.getElementById("readyArc");
-      var full = 395.8;
-      arc.style.strokeDashoffset = String(full * (1 - READINESS / 100));
-      var num = document.getElementById("readyNum"), n = 0;
-      var iv = setInterval(function () {
-        n += 3; if (n >= READINESS) { n = READINESS; clearInterval(iv); }
-        num.textContent = n;
-      }, 28);
-    }, reduced ? 0 : 700);
-    coachRotate();
+  function applyMode(m, animate) {
+    mode = m; store.set("dp_mode", m);
+    document.body.setAttribute("data-mode", m);
+    var fighter = m === "fighter";
+    modeName.textContent = fighter ? "Fighter" : "Coach";
+    ctxTitle.textContent = fighter ? "Fight Camp" : "Coach's Office";
+    ctxSub.textContent = fighter ? "Night 12 of 28 · 16 to fight night" : "6 athletes · 3 sessions tonight";
+    fighterHome.hidden = !fighter;
+    coachHome.hidden = fighter;
+    document.querySelectorAll(".modecard").forEach(function (c) {
+      var now = c.dataset.mode === m;
+      c.classList.toggle("current", now);
+      c.querySelector("[data-now]").textContent = now ? "Current" : "";
+    });
+    if (animate) {
+      app.classList.remove("live"); void app.offsetWidth;
+      app.classList.add("live");
+      speakBriefing(fighter ? "briefingHome" : "briefingCoach");
+    }
   }
 
-  // greeting follows the actual clock
+  function speakBriefing(id) {
+    briefTimers.forEach(clearTimeout); briefTimers = [];
+    var lines = document.getElementById(id).querySelectorAll(".line");
+    lines.forEach(function (l) { l.classList.remove("show"); });
+    lines.forEach(function (l, i) {
+      briefTimers.push(setTimeout(function () { l.classList.add("show"); }, 900 + i * 1400));
+    });
+    var wave = document.getElementById("cornerWave");
+    if (wave) {
+      wave.classList.remove("idle");
+      briefTimers.push(setTimeout(function () { wave.classList.add("idle"); }, 900 + lines.length * 1400 + 1200));
+    }
+  }
+
+  function showApp() {
+    app.classList.add("on");
+    requestAnimationFrame(function () {
+      app.classList.add("live");
+      speakBriefing(mode === "fighter" ? "briefingHome" : "briefingCoach");
+      setTimeout(fillRoundRing, reduced ? 0 : 1100);
+    });
+  }
+
+  // greeting + date
   var h = new Date().getHours();
-  document.getElementById("greet").textContent =
-    (h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : "Good evening") + ", Gbolahan.";
-  document.getElementById("campday").textContent = "Camp · Night " + CAMP_DAY + " of " + CAMP_LEN;
+  var greetWord = h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : "Good evening";
+  document.getElementById("greet").textContent = greetWord + ", Gbolahan";
+  var dstr = new Date().toLocaleDateString(undefined, { weekday: "short", day: "numeric", month: "short" });
+  document.getElementById("dateStr").textContent = dstr;
+  document.getElementById("dateStr2").textContent = dstr;
 
-  // camp ticks
-  var ticks = document.getElementById("ticks");
+  // camp timeline: 28 nights, fight night flag at the end
+  var tl = document.getElementById("tl"), CAMP_DAY = 12, CAMP_LEN = 28;
   for (var i = 1; i <= CAMP_LEN; i++) {
-    var el = document.createElement("i");
-    if (i < CAMP_DAY) el.className = "done";
-    else if (i === CAMP_DAY) el.className = "today";
-    ticks.appendChild(el);
+    var n = document.createElement("div");
+    n.className = "node" + (i < CAMP_DAY ? " done" : i === CAMP_DAY ? " today" : "") + (i === CAMP_LEN ? " fight" : "");
+    var wk = i === CAMP_LEN ? "Fight" : (i % 7 === 1 ? "Wk " + Math.ceil(i / 7) : "");
+    n.innerHTML = '<span class="bar"></span><span class="dot"></span><span class="wk">' + wk + "</span>";
+    tl.appendChild(n);
+  }
+  // keep "tonight" in view
+  setTimeout(function () {
+    var today = tl.querySelector(".today");
+    if (today) today.scrollIntoView({ inline: "center", block: "nearest" });
+    scrollTo(0, 0);
+  }, 300);
+
+  // championship rounds ring: 12 segments, 9 won
+  var WON = 9, SEGS = 12;
+  var svg = document.getElementById("roundringSvg");
+  var R = 50, C = 2 * Math.PI * R, seglen = C / SEGS, gap = 3.4;
+  for (var s = 0; s < SEGS; s++) {
+    var el = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    el.setAttribute("cx", 59); el.setAttribute("cy", 59); el.setAttribute("r", R);
+    el.setAttribute("fill", "none");
+    el.setAttribute("stroke", "rgba(235,220,195,.12)");
+    el.setAttribute("stroke-width", 7);
+    el.setAttribute("stroke-dasharray", (seglen - gap) + " " + (C - seglen + gap));
+    el.setAttribute("stroke-dashoffset", String(-s * seglen));
+    el.setAttribute("transform", "rotate(-90 59 59)");
+    el.setAttribute("class", "seg");
+    svg.appendChild(el);
+  }
+  function fillRoundRing() {
+    var segs = svg.querySelectorAll(".seg");
+    var num = document.getElementById("ringNum");
+    for (var s = 0; s < WON; s++) (function (s) {
+      setTimeout(function () {
+        segs[s].setAttribute("stroke", "url(#brassgrad)");
+        segs[s].setAttribute("stroke", s % 3 === 2 ? "#ecd28c" : "#c9a24a");
+        num.textContent = s + 1;
+        if (!reduced && s === WON - 1) tickSound();
+      }, reduced ? 0 : s * 130);
+    })(s);
   }
 
-  // the corner: lines type themselves in
-  var coachLines = [
-    "Four nights straight. Let's get to work.",
-    "Tonight is counters. Stay off the ropes.",
-    "Sharp beats strong. Sharp and relaxed.",
-    "Sixteen nights out. Everything counts now."
-  ];
-  var coachEl = document.getElementById("coachSay"), lineIdx = 0, typeTimer = null, rotateTimer = null;
-  function typeLine(s) {
-    clearInterval(typeTimer);
-    if (reduced) { coachEl.textContent = "“" + s + "”"; return; }
-    var i = 0; coachEl.textContent = "";
-    typeTimer = setInterval(function () {
-      i++;
-      coachEl.textContent = "“" + s.slice(0, i) + (i < s.length ? "…" : "”");
-      if (i >= s.length) clearInterval(typeTimer);
-    }, 26);
-  }
-  function coachRotate() {
-    typeLine(coachLines[0]);
-    clearInterval(rotateTimer);
-    rotateTimer = setInterval(function () {
-      lineIdx = (lineIdx + 1) % coachLines.length;
-      typeLine(coachLines[lineIdx]);
-    }, 9000);
-  }
+  // mode switcher
+  var modeOverlay = document.getElementById("modeOverlay");
+  document.getElementById("modeBtn").addEventListener("click", function () {
+    tickSound(); modeOverlay.classList.add("on");
+  });
+  modeOverlay.addEventListener("click", function (e) {
+    if (e.target === modeOverlay) modeOverlay.classList.remove("on");
+  });
+  document.querySelectorAll(".modecard").forEach(function (c) {
+    c.addEventListener("click", function () {
+      var m = c.dataset.mode;
+      modeOverlay.classList.remove("on");
+      if (m === mode) return;
+      impact();
+      app.classList.add("leaving");
+      setTimeout(function () {
+        app.classList.remove("leaving");
+        applyMode(m, true);
+      }, 400);
+    });
+  });
+  applyMode(mode, false);
 
-  // sound toggle (SVG bell, no emoji)
+  // sound toggle
   var soundToggle = document.getElementById("soundToggle");
   var muteLine = document.getElementById("bellMute");
   function paintSound() {
@@ -838,7 +1043,22 @@
   });
   paintSound();
 
-  /* ---------------- training: the real round timer ---------------- */
+  /* ---------------- pre-session briefing → training ---------------- */
+  var briefOverlay = document.getElementById("briefOverlay");
+  function runBriefing(then) {
+    briefOverlay.classList.add("on");
+    var lines = briefOverlay.querySelectorAll(".bline");
+    lines.forEach(function (l) { l.classList.remove("show"); });
+    lines.forEach(function (l, i) {
+      setTimeout(function () { l.classList.add("show"); tickSound(); }, 400 + i * 1100);
+    });
+    setTimeout(function () {
+      briefOverlay.classList.remove("on");
+      then();
+    }, reduced ? 200 : 400 + lines.length * 1100 + 900);
+  }
+
+  /* ---------------- training ---------------- */
   var training = document.getElementById("training");
   var ringArc = document.getElementById("ringArc");
   var clockEl = document.getElementById("clock");
@@ -848,20 +1068,16 @@
   var coachTxt = document.getElementById("coachTxt");
   var RING = 867.1;
   var plan = { rounds: 6, work: 180, rest: 60 };
-  var st = null; // { round, phase, remain, total, paused }
-  var tick = null, cueTimer = null;
-
+  var st = null, tick = null, cueTimer = null;
   var workCues = [
-    "Double jab — move right",
-    "Check hook off the rope",
+    "Cut the ring — small steps",
+    "Stay behind the jab",
     "Slip left — counter right",
     "Level change — body body head",
-    "Hands up — breathe",
+    "Win this exchange",
     "Pivot out — don't square up"
   ];
-
   function fmt(s) { return Math.floor(s / 60) + ":" + ("0" + (s % 60)).slice(-2); }
-
   function paintTimer() {
     clockEl.textContent = fmt(st.remain);
     ringArc.style.strokeDashoffset = String(RING * (1 - st.remain / st.total));
@@ -873,24 +1089,20 @@
     training.classList.toggle("rest", !work);
     training.classList.toggle("warn10", work && st.remain <= 10 && st.remain > 0 && !st.paused);
   }
-
   function showCue() {
-    if (st.phase !== "work") return;
+    if (!st || st.phase !== "work") return;
     coachTxt.textContent = workCues[Math.floor(Math.random() * workCues.length)];
     coachline.classList.add("show");
     setTimeout(function () { coachline.classList.remove("show"); }, 5200);
   }
-
   function startSession() {
     st = { round: 1, phase: "work", remain: plan.work, total: plan.work, paused: false };
     training.classList.add("on");
     bell(1);
     paintTimer();
     setTimeout(showCue, 1500);
-    clearInterval(cueTimer);
-    cueTimer = setInterval(showCue, 22000);
-    clearInterval(tick);
-    tick = setInterval(step, 1000);
+    clearInterval(cueTimer); cueTimer = setInterval(showCue, 22000);
+    clearInterval(tick); tick = setInterval(step, 1000);
   }
   function step() {
     if (st.paused) return;
@@ -913,7 +1125,7 @@
     paintTimer();
   }
   function finishSession() {
-    bell(3); // end of the fight
+    bell(3);
     clearInterval(tick); clearInterval(cueTimer);
     coachTxt.textContent = "That's camp for tonight. Good work.";
     coachline.classList.add("show");
@@ -923,20 +1135,26 @@
     clearInterval(tick); clearInterval(cueTimer);
     training.classList.remove("on", "rest", "warn10");
     coachline.classList.remove("show");
+    document.getElementById("pauseBtn").textContent = "Pause";
+    st = null;
   }
-
-  document.getElementById("startBtn").addEventListener("click", startSession);
+  document.getElementById("startBtn").addEventListener("click", function () {
+    tickSound();
+    runBriefing(startSession);
+  });
+  document.getElementById("planBtn").addEventListener("click", function () {
+    tickSound();
+    var b = document.getElementById("briefingCoach").querySelectorAll(".line");
+    b[b.length - 1].textContent = "Session planner opens in the next build. Tonight's slots are set.";
+    speakBriefing("briefingCoach");
+  });
   document.getElementById("pauseBtn").addEventListener("click", function () {
     if (!st) return;
     st.paused = !st.paused;
     this.textContent = st.paused ? "Resume" : "Pause";
-    impact();
-    paintTimer();
+    impact(); paintTimer();
   });
-  document.getElementById("endBtn").addEventListener("click", function () {
-    impact(); closeTraining();
-    document.getElementById("pauseBtn").textContent = "Pause";
-  });
+  document.getElementById("endBtn").addEventListener("click", function () { impact(); closeTraining(); });
 })();
 </script>
 </body>
