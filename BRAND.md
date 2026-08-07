@@ -34,22 +34,23 @@ Rules:
 
 ## Visual language
 
-**Palette** — the dark gym and the belt:
+**Palette** — the gym after hours, under one tungsten lamp:
 
 | Token | Hex | Use |
 |---|---|---|
-| Ink | `#07070a` | Canvas. The room. |
-| Ink 2/3 | `#0d0d12` / `#14141b` | Surfaces, cards |
-| Gold deep → hi | `#6d5518` → `#c9a24a` → `#f7e7ae` | Championship metal. Wordmark, accents, focus. |
-| Corner red | `#d7263d` | One job only: the primary "go" action. |
-| Text | `#f2f0ea` / `#8d8c96` | Copy / secondary |
+| Black / coal / smoke | `#080606` / `#0e0b0a` / `#17120f` | The room. Warm-cast, never neutral grey. |
+| Bone / dust | `#ede5d8` / `#9a8d7c` | Copy under tungsten light |
+| Brass | `#9b7a2e` → `#c9a24a` → `#ecd28c` | The Corner, championship metal, readiness |
+| Red | `#b3140e` → `#e8271f` → `#ff5a45` | The logo's D. One job: the "go" action. |
+| Leather | `#2a130d` → `#7c3f28` | The bag. Material, not UI chrome. |
 
-Gold is *metal*, never flat: always a gradient ramp with a moving or resting sheen.
+Every metal is a gradient ramp with a travelling sheen; every background carries
+light (radial tungsten glow + film grain overlay), never a flat fill.
 Red is scarce — if red appears twice on one screen, remove one.
 
-**Type** — condensed, heavy, uppercase for the brand voice; wide letter-spacing
-(`.14em`–`.52em`) evokes engraved nameplates and fight posters. Body copy stays
-sentence-case and calm.
+**Type** — Anton (embedded) for display: huge, uppercase, fight-poster confident.
+Oswald (embedded) for labels and data: letterspaced small caps like engraved
+nameplates, tabular numerals on the clock. Body copy stays sentence-case and calm.
 
 **Motion** — everything settles like hung metal: fast attack, long decisive
 ease-out (`cubic-bezier(.16,.84,.3,1)`). Nothing bounces. Nothing is cute.
